@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7787A5D4-BF06-44C8-B5D7-FE1920223E9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AvansFestivals.Domain</RootNamespace>
+    <AssemblyName>AvansFestivals.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.5\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IFestivalRepo.cs" />
+    <Compile Include="Abstract\ITicketRepo.cs" />
+    <Compile Include="Abstract\IUserRepo.cs" />
+    <Compile Include="Concrete\FestivalRepo.cs" />
+    <Compile Include="Concrete\TicketRepo.cs" />
+    <Compile Include="Concrete\UserRepo.cs" />
+    <Compile Include="Database\AvansFestivals.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvansFestivals.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AvansFestivals.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AvansFestivals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvansFestivals.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Comment.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Festival.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\FestivalState.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\OrderItem.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Ticket.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TicketAmount.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TicketType.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\User.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Md5Hash.cs" />
+    <Compile Include="Patterns\TemplatePatternEmail\OrderEmail.cs" />
+    <Compile Include="TestData\TestData.cs" />
+    <Compile Include="Patterns\FactoryPatternTickets\EarlybirdFactory.cs" />
+    <Compile Include="Patterns\FactoryPatternTickets\NormalFactory.cs" />
+    <Compile Include="Patterns\FactoryPatternTickets\TicketFactory.cs" />
+    <Compile Include="Patterns\FactoryPatternTickets\VipFactory.cs" />
+    <Compile Include="Patterns\StatePattern\BaseState.cs" />
+    <Compile Include="Patterns\StatePattern\CreatedState.cs" />
+    <Compile Include="Patterns\StatePattern\DoneState.cs" />
+    <Compile Include="Patterns\StatePattern\InProgressState.cs" />
+    <Compile Include="Patterns\StatePattern\SoldOutState.cs" />
+    <Compile Include="Patterns\StatePattern\StartSaleState.cs" />
+    <Compile Include="Patterns\StrategyPatternPayment\IdealStrategy.cs" />
+    <Compile Include="Patterns\StrategyPatternPayment\PaymentStategy.cs" />
+    <Compile Include="Patterns\StrategyPatternPayment\PaypalStrategy.cs" />
+    <Compile Include="Patterns\TemplatePatternEmail\Email.cs" />
+    <Compile Include="Patterns\TemplatePatternEmail\NewUserEmail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Database\AvansFestivals.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AvansFestivals.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Database\AvansFestivals.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AvansFestivals.edmx</DependentUpon>
+      <LastGenOutput>AvansFestivals.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Database\AvansFestivals.edmx.diagram">
+      <DependentUpon>AvansFestivals.edmx</DependentUpon>
+    </None>
+    <None Include="Database\AvansFestivals.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AvansFestivals.edmx</DependentUpon>
+      <LastGenOutput>AvansFestivals.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\AvansFestivals.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Patterns\CommandPatternSendEmail\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
