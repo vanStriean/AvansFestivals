@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<item id="lng">NL</item>
+	<item id="lngLNG">nl-NL</item>
+	<item id="lngName">Nederlands</item>
+	<item id="charset">UTF-8</item>
+	<item id="dir">ltr</item>
+	<item id="changelng">Verander Taal</item>
+	<item id="changedlng">Taal is veranderd</item>
+
+	<item id="displayName">Weergave Naam</item>
+	<item id="stringLength">Het veld {0} met een string bevatten met de waarde {1}.</item>
+	<item id="required">Verplicht</item>
+ 	<item id="description">Beschrijving</item>
+
+	<item id="upcomingEvents">Aankomende Evementen</item>
+
+  <item id="logoutTitle">Uitloggen</item>
+  <item id="loginTitle">Inloggen</item>
+  <item id="registerTitle">Registreren</item>
+  <item id="password">Wachtwoord</item>
+  <item id="username">Gebruikersnaam</item>
+
+  <item id="firstname">Voornaam</item>
+  <item id="lastname">Achternaam</item>
+  <item id="age">Leeftijd</item>
+  <item id="email">Email</item>
+  <item id="rePassword">Herhaal Wachtwoord</item>
+  
+  <item id="contact">Contact</item>
+  <item id="address">Adres</item>
+  <item id="business">Zakelijk</item>
+  <item id="about">Over ons</item>
+  <item id="allEvents">All Events</item>
+  
+  <item id="checkout">Bekijk</item>
+  <item id="tickets">Tickets</item>
+
+  <item id="date">Datum</item>
+  <item id="event">Evenement</item>
+  <item id="name">Naam</item>
+  <item id="description">Beschrijving</item>
+  <item id="order">Bestellen</item>
+  <item id="location">Locatie</item>
+  <item id="amount">Amount</item>
+  <item id="total">Totaal</item>
+  <item id="next">Volgende</item>
+  
+  <item id="from">van</item>
+  <item id="until">t/m</item>
+  <item id="available">Beschikbaar</item>
+  <item id="soldOut">Uitverkocht</item>
+  <item id="loginFirst">Log eerst in</item>
+
+
+</lang>

@@ -1,0 +1,56 @@
+﻿@model AvansFestivals.Domain.Database.TicketAmount
+
+@{
+    ViewBag.Title = "DeleteTicketAmount";
+}
+
+<h2>Verwijder Ticket Type</h2>
+
+<h3>Weet je zeker dat je de volgende gegevens wilt verwijderen?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ticket voor festival
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Festival.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TicketType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TicketType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Hoeveelheid
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Verwijder" class="btn btn-default" /> |
+            @Html.ActionLink("Terug naar lijst", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,72 @@
+﻿@model AvansFestivals.Domain.Database.Festival
+@{
+    ViewBag.Title = "Festival Details";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="banner">
+            <img class="img-responsive" src="@Model.Banner">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <img class="img-responsive" src="@Model.Logo" />
+                <dl>
+                    <dt>@Html.Localize("name")</dt>
+                    <dd>@Model.Name</dd>
+                </dl>
+                <dl>
+                    <dt>@Html.Localize("date")</dt>
+                    <dd>@Model.Start.ToShortDateString()</dd>
+                    <dd>@Html.Localize("until")</dd>
+                    <dd>@Model.End.ToShortDateString()</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <dl>
+            <dt>@Html.Localize("description")</dt>
+            <dd>@Model.Description</dd>
+        </dl>
+    </div>
+    <div class="col-md-2">
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+
+                @foreach (var e in Model.TicketAmounts)
+                {
+                    <dl>
+                        <dt>@e.TicketType.ToString()</dt>
+                        @if ((e.Amount - Model.Tickets.Where(w => w.TicketType == e.TicketType).Count()) > 0)
+                        {
+                            <dd class="text-success"><span class="glyphicon glyphicon-ok-sign"></span> @Html.Localize("available")</dd>
+                        }
+                        else
+                        {
+                            <dd class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> @Html.Localize("soldOut")</dd>
+                        }
+                    </dl>
+                }
+                @if (Session["User"] != null)
+                {
+                    <dl>
+                        <dt>@Html.Localize("tickets")</dt>
+                        <dd><a href="@Url.Action("Tickets", "Festival", new { id = Model.Id })" class="btn btn-primary">Bestellen<span class="glyphicon glyphicon-tags"></span></a></dd>
+                    </dl>
+                }
+                else
+                {
+                    <dl>
+                        <dt>@Html.Localize("order")</dt>
+                        <dd><a href="@Url.Action("Login", "Account")"> @Html.Localize("loginFirst")</a></dd>
+                    </dl>
+                }
+            </div>
+        </div>
+    </div>
+</div>
