@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82650bc493bb489ea9cd4570c9d58282" Name="Diagram1">
+        <EntityTypeShape EntityType="AvansFestivalsModel.Comment" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvansFestivalsModel.Festival" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvansFestivalsModel.OrderItem" Width="1.5" PointX="3.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvansFestivalsModel.Order" Width="1.5" PointX="1.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvansFestivalsModel.Ticket" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvansFestivalsModel.User" Width="1.5" PointX="1.625" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="AvansFestivalsModel.FK_CommentComment" ManuallyRouted="false" />
+        <AssociationConnector Association="AvansFestivalsModel.FK_FestivalComment" ManuallyRouted="false" />
+        <AssociationConnector Association="AvansFestivalsModel.FK_UserComment" ManuallyRouted="false" />
+        <AssociationConnector Association="AvansFestivalsModel.FK_FestivalTicket" ManuallyRouted="false" />
+        <AssociationConnector Association="AvansFestivalsModel.FK_OrderItemTicket" ManuallyRouted="false" />
+        <AssociationConnector Association="AvansFestivalsModel.FK_OrderOrderItem" ManuallyRouted="false" />
+        <AssociationConnector Association="AvansFestivalsModel.FK_UserTicket" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AvansFestivalsModel.TicketAmount" Width="1.5" PointX="2" PointY="8.875" />
+        <AssociationConnector Association="AvansFestivalsModel.FestivalTicketAmount" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
