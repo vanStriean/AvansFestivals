@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AvansFestivalsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CommentId" Type="Int32" Nullable="false" />
+    <Property Name="FestivalId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comments1" Relationship="Self.FK_CommentComment" FromRole="Comments" ToRole="Comments1" />
+    <NavigationProperty Name="Comment1" Relationship="Self.FK_CommentComment" FromRole="Comments1" ToRole="Comments" />
+    <NavigationProperty Name="Festival" Relationship="Self.FK_FestivalComment" FromRole="Comments" ToRole="Festivals" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserComment" FromRole="Comments" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Festival">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Logo" Type="String" Nullable="false" />
+    <Property Name="Banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+    <Property Name="FestivalState" Type="AvansFestivalsModel.FestivalState" Nullable="false" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_FestivalComment" FromRole="Festivals" ToRole="Comments" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_FestivalTicket" FromRole="Festivals" ToRole="Tickets" />
+    <NavigationProperty Name="TicketAmounts" Relationship="AvansFestivalsModel.FestivalTicketAmount" FromRole="Festival" ToRole="TicketAmount" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_OrderItemTicket" FromRole="OrderItems" ToRole="Tickets" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderOrderItem" FromRole="OrderItems" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ordered" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderOrderItem" FromRole="Orders" ToRole="OrderItems" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="TicketType" Type="AvansFestivalsModel.TicketType" Nullable="false" />
+    <Property Name="FestivalId" Type="Int32" Nullable="false" />
+    <Property Name="OrderItemId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Festival" Relationship="Self.FK_FestivalTicket" FromRole="Tickets" ToRole="Festivals" />
+    <NavigationProperty Name="OrderItem" Relationship="Self.FK_OrderItemTicket" FromRole="Tickets" ToRole="OrderItems" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserTicket" FromRole="Tickets" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_UserComment" FromRole="Users" ToRole="Comments" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_UserTicket" FromRole="Users" ToRole="Tickets" />
+    <Property Name="Role" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CommentComment">
+    <End Role="Comments" Type="Self.Comment" Multiplicity="1" />
+    <End Role="Comments1" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments1">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FestivalComment">
+    <End Role="Festivals" Type="Self.Festival" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Festivals">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="FestivalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserComment">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FestivalTicket">
+    <End Role="Festivals" Type="Self.Festival" Multiplicity="1" />
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Festivals">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="FestivalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItemTicket">
+    <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="1" />
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderItems">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="OrderItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderOrderItem">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTicket">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AvansFestivalsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Festivals" EntityType="Self.Festival" />
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_CommentComment" Association="Self.FK_CommentComment">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="Comments1" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FestivalComment" Association="Self.FK_FestivalComment">
+      <End Role="Festivals" EntitySet="Festivals" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserComment" Association="Self.FK_UserComment">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FestivalTicket" Association="Self.FK_FestivalTicket">
+      <End Role="Festivals" EntitySet="Festivals" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItemTicket" Association="Self.FK_OrderItemTicket">
+      <End Role="OrderItems" EntitySet="OrderItems" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderOrderItem" Association="Self.FK_OrderOrderItem">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTicket" Association="Self.FK_UserTicket">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <EntitySet Name="TicketAmounts" EntityType="AvansFestivalsModel.TicketAmount" />
+    <AssociationSet Name="FestivalTicketAmount" Association="AvansFestivalsModel.FestivalTicketAmount">
+      <End Role="Festival" EntitySet="Festivals" />
+      <End Role="TicketAmount" EntitySet="TicketAmounts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EnumType Name="TicketType">
+    <Member Name="Earlybird" />
+    <Member Name="Normal" />
+    <Member Name="VIP" />
+  </EnumType>
+  <EnumType Name="FestivalState">
+    <Member Name="SoldOut" />
+    <Member Name="StartSale" />
+    <Member Name="Created" />
+    <Member Name="Done" />
+    <Member Name="InProgress" />
+  </EnumType>
+  <EntityType Name="TicketAmount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketType" Type="AvansFestivalsModel.TicketType" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Festival" Relationship="AvansFestivalsModel.FestivalTicketAmount" FromRole="TicketAmount" ToRole="Festival" />
+    <Property Name="FestivalId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FestivalTicketAmount">
+    <End Type="AvansFestivalsModel.Festival" Role="Festival" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AvansFestivalsModel.TicketAmount" Role="TicketAmount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Festival">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TicketAmount">
+        <PropertyRef Name="FestivalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

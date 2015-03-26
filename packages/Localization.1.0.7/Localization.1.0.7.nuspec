@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Localization</id>
+    <version>1.0.7</version>
+    <title>Localization</title>
+    <authors>Yasin Kuyu</authors>
+    <owners>Yasin Kuyu</owners>
+    <licenseUrl>https://github.com/yasinkuyu/Localization/blob/Haster/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/yasinkuyu/Localization</projectUrl>
+    <iconUrl>http://i60.tinypic.com/2zsb1xf.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>ASP.NET MVC Multi Localization 
+
+Usage
+&lt;li&gt;@Html.ActionLinkLocalization("English", "Index", "Locales", new { lang = "en_US" })&lt;/li&gt;
+&lt;li&gt;@Html.ActionLinkLocalization("Türkçe", "Index", "Locales", new { lang = "tr_TR" })&lt;/li&gt;
+Or
+&lt;a href="Locales/?lang=en_US"&gt;English&lt;/a&gt;
+&lt;a href="Locales/?lang=tr_TR"&gt;Türkçe&lt;/a&gt;
+
+Index.cshtml
+
+@Html.Get("homepage") or @Html.Localize("homepage")
+
+Details
+https://github.com/yasinkuyu/Localization</description>
+    <summary>Create multi-language structure with ASP.NET MVC Localization</summary>
+    <copyright>Insya Interaktif</copyright>
+    <language>en-US</language>
+    <tags>Localization AspNetMvc MultiLanguage AspNetLocalization CSharpLocalization  Globalization  i18n  l10n</tags>
+  </metadata>
+</package>
