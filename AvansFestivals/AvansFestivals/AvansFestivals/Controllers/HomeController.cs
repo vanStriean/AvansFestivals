@@ -22,7 +22,7 @@ namespace AvansFestivals.Controllers
             festivalProvider = festivalRepo;
 
             //If the database is empty, uncommand this line for test data in the database.
-            TestData.Fill(30);
+            //TestData.Fill(30);
 
             //Email email = new NewUserEmail();
             //email.sendEmail();
