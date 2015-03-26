@@ -16,8 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansFestivals.UnitTests.We
 		{7787A5D4-BF06-44C8-B5D7-FE1920223E9A} = {7787A5D4-BF06-44C8-B5D7-FE1920223E9A}
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F54E1209-66FC-4204-B459-8EF191AD2D4A}"
-EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 4

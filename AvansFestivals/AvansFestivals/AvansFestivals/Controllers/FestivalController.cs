@@ -54,7 +54,7 @@ namespace AvansFestivals.Controllers
         }
 
         [HttpPost]
-        public JsonResult Tickets(int festId, int userId, TicketAmounts tickets)
+        public JsonResult Tickets(int festId, TicketAmounts tickets)
         {
             TicketOrderModel model = new TicketOrderModel()
             {

@@ -40,14 +40,17 @@ namespace AvansFestivals.Domain.Concrete
             Random rand = new Random();
             List<Festival> randFests = new List<Festival>();
             int count = 0;
-            while(count < amount)
+            if (db.Festivals.Count() > 0)
             {
-                int random = rand.Next(0, db.Festivals.Count() - 1);
-                Festival fest = db.Festivals.ToList().Skip(random).First();
-                if (!randFests.Contains(fest))
+                while (count < amount)
                 {
-                    randFests.Add(fest);
-                    count++;
+                    int random = rand.Next(0, db.Festivals.Count() - 1);
+                    Festival fest = db.Festivals.ToList().Skip(random).First();
+                    if (!randFests.Contains(fest))
+                    {
+                        randFests.Add(fest);
+                        count++;
+                    }
                 }
             }
 

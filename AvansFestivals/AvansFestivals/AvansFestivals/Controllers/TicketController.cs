@@ -14,6 +14,7 @@ namespace AvansFestivals.Controllers
     {
 
         IOrderRepo orderRepo;
+        AvansFestivalsEntities db = new AvansFestivalsEntities();
         readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public TicketController(IOrderRepo repo)
@@ -24,56 +25,69 @@ namespace AvansFestivals.Controllers
         // GET: /Ticket/
         public ActionResult Order()
         {
-            TicketOrderModel model = (TicketOrderModel)Session["TIcketModel"];
+            TicketOrderModel model = (TicketOrderModel)Session["tempModel"];
             if (model != null)
             {
                 Order order = new Order();
                 order.Ordered = DateTime.Now;
 
-                OrderItem item = new OrderItem();
+                Festival festival = db.Festivals.FirstOrDefault(m => m.Id == model.Festival.Id);
+                User user = db.Users.FirstOrDefault(m => m.Id == model.User.Id);
 
-                TicketFactory factory = new EarlybirdFactory();
-                for (int i = 0; i < model.Tickets.Earlybird; i++)
+                if (model.Tickets.Earlybird > 0)
                 {
-                    Ticket earlybird = factory.CreateTicket(model.Festival.TicketAmounts.FirstOrDefault(w => w.TicketType == TicketType.Earlybird).Price);
-                    model.Festival.Tickets.Add(earlybird);
-                    model.User.Tickets.Add(earlybird);
-                    item.Tickets.Add(earlybird);
+                    OrderItem item = new OrderItem();
+                    TicketFactory factory = new EarlybirdFactory();
+                    for (int i = 0; i < model.Tickets.Earlybird; i++)
+                    {
+                        Ticket earlybird = factory.CreateTicket(model.Festival.TicketAmounts.FirstOrDefault(w => w.TicketType == TicketType.Earlybird).Price);
+                        festival.Tickets.Add(earlybird);
+                        user.Tickets.Add(earlybird);
+                        item.Tickets.Add(earlybird);
+                    }
+                    order.OrderItems.Add(item);
                 }
-                order.OrderItems.Add(item);
 
-                item = new OrderItem();
-                factory = new NormalFactory();
-                for (int i = 0; i < model.Tickets.Normal; i++)
+                if (model.Tickets.Normal > 0)
                 {
-                    Ticket normal = factory.CreateTicket(model.Festival.TicketAmounts.FirstOrDefault(w => w.TicketType == TicketType.Normal).Price);
-                    model.Festival.Tickets.Add(normal);
-                    model.User.Tickets.Add(normal);
-                    item.Tickets.Add(normal);
+                    OrderItem item = new OrderItem();
+                    TicketFactory factory = new NormalFactory();
+                    for (int i = 0; i < model.Tickets.Normal; i++)
+                    {
+                        Ticket normal = factory.CreateTicket(model.Festival.TicketAmounts.FirstOrDefault(w => w.TicketType == TicketType.Normal).Price);
+                        festival.Tickets.Add(normal);
+                        user.Tickets.Add(normal);
+                        item.Tickets.Add(normal);
+                    }
+                    order.OrderItems.Add(item);
                 }
-                order.OrderItems.Add(item);
 
-                item = new OrderItem();
-                factory = new VipFactory();
-                for (int i = 0; i < model.Tickets.VIP; i++)
+                if (model.Tickets.VIP > 0)
                 {
-                    Ticket vip = factory.CreateTicket(model.Festival.TicketAmounts.FirstOrDefault(w => w.TicketType == TicketType.VIP).Price);
-                    model.Festival.Tickets.Add(vip);
-                    model.User.Tickets.Add(vip);
-                    item.Tickets.Add(vip);
+                    OrderItem item = new OrderItem();
+                    TicketFactory factory = new VipFactory();
+                    for (int i = 0; i < model.Tickets.VIP; i++)
+                    {
+                        Ticket vip = factory.CreateTicket(model.Festival.TicketAmounts.FirstOrDefault(w => w.TicketType == TicketType.VIP).Price);
+                        festival.Tickets.Add(vip);
+                        user.Tickets.Add(vip);
+                        item.Tickets.Add(vip);
+                    }
+                    order.OrderItems.Add(item);
                 }
-                order.OrderItems.Add(item);
 
-                orderRepo.AddOrder(order);
-
+                db.Orders.Add(order);
+                db.SaveChanges();
+                ViewBag.Email = model.User.Email;
+                Session["tempModel"] = null;
                 return View();
 
             }
-            return View();
+            return RedirectToAction("Index", "Home");
         }
         public ActionResult Overview()
         {
-            TicketOrderModel model = (TicketOrderModel)Session["TIcketModel"];
+            TicketOrderModel model = (TicketOrderModel)Session["tempModel"];
             return View(model);
         }
     }

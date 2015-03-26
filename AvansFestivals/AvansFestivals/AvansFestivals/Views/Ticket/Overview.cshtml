@@ -89,14 +89,14 @@
                         <td><div align="right">Kies uw bank</div></td>
                         <td>
                             <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
                                     Kies uw bank
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" id="dropdown2" aria-labelledby="dropdownMenu2">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ABN AMRO</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-3" href="#">ING</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-5" href="#">Rabobank</a></li>
+                                    <li role="presentation"><a role="menuitem" data-bank="abn" tabindex="-1" href="#">ABN AMRO</a></li>
+                                    <li role="presentation"><a role="menuitem" data-bank="ing" tabindex="-2" href="#">ING</a></li>
+                                    <li role="presentation"><a role="menuitem" data-bank="rabo" tabindex="-3" href="#">Rabobank</a></li>
                                 </ul>
                             </div>
                         </td>
@@ -104,21 +104,35 @@
                 </tbody>
             </table>
         </section>
-        <a href="@Url.Action("Order", "Ticket")" class="btn btn-primary next pull-right">Afronden <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a href="@Url.Action("Order", "Ticket")" id="orderButton" class="btn btn-primary next pull-right">Afronden <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <script>
     $().ready(function () {
-        var payMethod;
+        var payMethod = "";
+        var currentBank = "";
         $(".ideal-method").hide();
+
+        $("#orderButton").addClass("disabled");
 
         $("#dropdown1 a").click(function () {
             payMethod = $(this).data("method");
-            $("#dropdownMenu1").html($(this).text() + " <span class='caret'></span>")
+            $("#dropdownMenu1").html($(this).text() + " <span class='caret'></span>");
 
-            if (payMethod == "ideal")
+            if (payMethod == "ideal") {
                 $(".ideal-method").show();
-            else
+                if(currentBank == "")
+                    $("#orderButton").addClass("disabled");
+            }
+            else {
                 $(".ideal-method").hide();
+                $("#orderButton").removeClass("disabled");
+            }
+        });
+
+        $("#dropdown2 a").click(function () {
+            currentBank = $(this).data("bank");
+            $("#dropdownMenu2").html($(this).text() + " <span class='caret'></span");
+            $("#orderButton").removeClass("disabled");
         });
     });
     </script>
