@@ -1,0 +1,264 @@
+﻿@using AvansFestivals.Models
+@model TicketOrderModel
+@{
+    ViewBag.Title = "Tickets";
+}
+
+
+@if (Model.User != null)
+{
+    using (Html.BeginForm())
+    {
+        <h2>Maak uw ticketkeuze</h2>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="img-responsive img-rounded" src="@Model.Festival.Logo" />
+            </div>
+            <div class="col-sm-6">
+                <div class="well well-sm">
+                    <dl>
+                        <dt>Evenement:</dt>
+                        <dd>@Model.Festival.Name</dd>
+                        <dt>Datum:</dt>
+                        <dd>@Model.Festival.Start.ToShortDateString()
+                        <dd>
+                        <dt>Locatie:</dt>
+                        <dd>@Model.Festival.Start.ToShortDateString()</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.User)
+        @Html.HiddenFor(m => m.Festival)
+        <div id="steps-uid-0" class="wizard clearfix" role="application">
+            <section aria-hidden="false" class="body current" aria-labelledby="steps-uid-0-h-0" role="tabpanel" id="steps-uid-0-p-0">
+                <div class="well well-sm well-inverse">Tickets</div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th style="min-width: 80px;">Tickets</th>
+                            <th style="width: 140px;">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Festival.TicketAmounts.Where(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.Earlybird).FirstOrDefault() != null)
+                        {
+                            if ((Model.Festival.TicketAmounts.FirstOrDefault(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.Earlybird).Amount - Model.Festival.Tickets.Where(w => w.TicketType == AvansFestivals.Domain.Database.TicketType.Earlybird).Count()) > 0)
+                            {
+                                <tr>
+                                    <td><strong>@Html.LabelFor(m => m.Tickets.Earlybird)</strong></td>
+                                    <td>€ <span id="earlyPrice">@Model.Festival.TicketAmounts.FirstOrDefault(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.Earlybird).Price</span></td>
+
+                                    <td>
+                                        <div class="input-group">
+                                            @Html.TextBoxFor(m => m.Tickets.Earlybird, new { @class = "form-control text-center", @id = "earlyType", disabled = true })
+                                            <span class="input-group-btn">
+                                                <button type="button" id="earlyButtonPlus" class="btn btn-success">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                                <button type="button" id="earlyButtonMin" class="btn">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        @if (Model.Festival.TicketAmounts.Where(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.Normal).FirstOrDefault() != null)
+                        {
+                            if ((Model.Festival.TicketAmounts.FirstOrDefault(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.Normal).Amount - Model.Festival.Tickets.Where(w => w.TicketType == AvansFestivals.Domain.Database.TicketType.Normal).Count()) > 0)
+                            {
+                                <tr>
+                                    <td><strong>@Html.LabelFor(m => m.Tickets.Normal)</strong></td>
+                                    <td>€ <span id="normalPrice">@Model.Festival.TicketAmounts.FirstOrDefault(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.Normal).Price</span></td>
+                                    <td>
+                                        <div class="input-group">
+                                            @Html.TextBoxFor(m => m.Tickets.Normal, new { @class = "form-control text-center", @id = "normalType", disabled = true })
+                                            <span class="input-group-btn">
+                                                <button type="button" id="normalButtonPlus" class="btn btn-success">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                                <button type="button" id="normalButtonMin" class="btn">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                        @if (Model.Festival.TicketAmounts.Where(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.VIP).FirstOrDefault() != null)
+                        {
+                            if ((Model.Festival.TicketAmounts.FirstOrDefault(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.VIP).Amount - Model.Festival.Tickets.Where(w => w.TicketType == AvansFestivals.Domain.Database.TicketType.VIP).Count()) > 0)
+                            {
+                                <tr>
+                                    <td><strong>@Html.LabelFor(m => m.Tickets.VIP)</strong></td>
+                                    <td>€ <span id="vipPrice">@Model.Festival.TicketAmounts.FirstOrDefault(e => e.TicketType == AvansFestivals.Domain.Database.TicketType.VIP).Price</span></td>
+                                    <td>
+                                        <div class="input-group">
+                                            @Html.TextBoxFor(m => m.Tickets.VIP, new { @class = "form-control text-center", @id = "vipType", disabled = true })
+                                            <span class="input-group-btn">
+                                                <button type="button" id="vipButtonPlus" class="btn btn-success">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                                <button type="button" id="vipButtonMin" class="btn">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                    <tfoot>
+                        <tr class="success">
+                            <td><strong>Totaal</strong></td>
+                            <td><strong>€ <span id="totalAmount"></span></strong></td>
+                            <td><div class="text-center" style="width: 42px"><strong><span id="totalQuantity">0</span></strong></div></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+            <input type="submit" class="btn btn-primary next pull-right" value="Volgende" />
+        </div>
+    }
+
+    <script>
+        $().ready(function () {
+            var maxTotal = 8;
+            var currentAmount = parseInt($("#earlyType").val() + $("#normalType").val() + $("#vipType").val());
+            var totalPrice = 0.0;
+            validate();
+            calculatePrice();
+
+            $("#earlyButtonPlus").click(function () {
+                var amount = $("#earlyType").val();
+                if (currentAmount <= maxTotal) {
+                    amount++;
+                    currentAmount++
+                    $("#earlyType").val(amount);
+                    validate();
+                    calculatePrice();
+                }
+            });
+
+            $("#earlyButtonMin").click(function () {
+                var amount = $("#earlyType").val();
+                if (currentAmount <= maxTotal) {
+                    amount--;
+                    currentAmount--
+                    $("#earlyType").val(amount);
+                    validate();
+                    calculatePrice();
+                }
+            });
+
+            $("#normalButtonPlus").click(function () {
+                var amount = $("#normalType").val();
+                if (currentAmount <= maxTotal) {
+                    amount++;
+                    currentAmount++
+                    $("#normalType").val(amount);
+                    validate();
+                    calculatePrice();
+                }
+            });
+
+            $("#normalButtonMin").click(function () {
+                var amount = $("#normalType").val();
+                if (currentAmount <= maxTotal) {
+                    amount--;
+                    currentAmount--
+                    $("#normalType").val(amount);
+                    validate();
+                    calculatePrice();
+                }
+            });
+
+            $("#vipButtonPlus").click(function () {
+                var amount = $("#vipType").val();
+                if (currentAmount <= maxTotal) {
+                    amount++;
+                    currentAmount++
+                    $("#vipType").val(amount);
+                    validate();
+                    calculatePrice();
+                }
+            });
+
+            $("#vipButtonMin").click(function () {
+                var amount = $("#vipType").val();
+                if (currentAmount <= maxTotal) {
+                    amount--;
+                    currentAmount--
+                    $("#vipType").val(amount);
+                    validate();
+                    calculatePrice();
+                }
+            });
+
+            function validate() {
+                if ($("#earlyType").val() == 0) {
+                    $("#earlyButtonMin").addClass("disabled");
+                }
+                else {
+                    $("#earlyButtonMin").removeClass("disabled");
+                }
+
+                if ($("#normalType").val() == 0) {
+                    $("#normalButtonMin").addClass("disabled");
+                }
+                else {
+                    $("#normalButtonMin").removeClass("disabled");
+                }
+
+                if ($("#vipType").val() == 0) {
+                    $("#vipButtonMin").addClass("disabled");
+                }
+                else {
+                    $("#vipButtonMin").removeClass("disabled");
+                }
+
+                if (currentAmount == maxTotal) {
+                    $("#earlyButtonPlus").addClass("disabled");
+                    $("#normalButtonPlus").addClass("disabled");
+                    $("#vipButtonPlus").addClass("disabled");
+                }
+                else {
+                    $("#earlyButtonPlus").removeClass("disabled");
+                    $("#normalButtonPlus").removeClass("disabled");
+                    $("#vipButtonPlus").removeClass("disabled");
+                }
+
+                $("#totalQuantity").html(currentAmount);
+
+                if (currentAmount == 0)
+                    $(".next").addClass("disabled");
+                else
+                    $(".next").removeClass("disabled");
+
+            }
+
+            function calculatePrice() {
+                totalPrice = parseFloat(($("#earlyPrice").html() * $("#earlyType").val()) + ($("#normalPrice").html() * $("#normalType").val()) + ($("#vipPrice").html() * $("#vipType").val()));
+
+                $("#totalAmount").html(totalPrice);
+            }
+
+        });
+    </script>
+}
+else
+{
+    <p>&nbsp;</p>
+    <div class="alert alert-danger" role="alert">
+        <strong>Niet ingelogd!</strong> Om tickets te bestellen moet je ingelogd zijn!
+        <a href="@Url.Action("Login", "Account")" class="alert-link">Log hier in</a>
+    </div>
+}
