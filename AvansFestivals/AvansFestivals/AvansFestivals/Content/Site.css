@@ -89,3 +89,7 @@ textarea {
     background-color: #b12636;
     border-color: #902430;
 }
+
+.message {
+    max-width:100%;
+}

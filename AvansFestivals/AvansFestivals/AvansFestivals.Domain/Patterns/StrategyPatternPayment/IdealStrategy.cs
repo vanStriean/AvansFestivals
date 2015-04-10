@@ -8,13 +8,11 @@ namespace AvansFestivals.Domain.Patterns.StrategyPatternPayment
 {
     public class IdealStrategy : PaymentStategy
     {
-        string cardName;
         string cardNumber;
         string ibanNumber;
 
-        public IdealStrategy(string cardname, string cardnumber, string iban)
+        public IdealStrategy(string cardnumber, string iban)
         {
-            this.cardName = cardname;
             this.cardNumber = cardnumber;
             this.ibanNumber = iban;
         }

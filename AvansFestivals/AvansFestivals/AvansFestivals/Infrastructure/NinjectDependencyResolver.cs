@@ -35,6 +35,7 @@ namespace AvansFestivals.Infrastructure
             kernel.Bind<IUserRepo>().To<UserRepo>();
             kernel.Bind<ITicketRepo>().To<TicketRepo>();
             kernel.Bind<IOrderRepo>().To<OrderRepo>();
+            kernel.Bind<ICommentRepo>().To<CommentRepo>();
         }
     }
 }

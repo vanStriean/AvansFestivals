@@ -14,20 +14,12 @@ namespace AvansFestivals.Domain.Database
     
     public partial class Comment
     {
-        public Comment()
-        {
-            this.Comments1 = new HashSet<Comment>();
-        }
-    
         public int Id { get; set; }
         public string Message { get; set; }
         public System.DateTime Created { get; set; }
-        public int CommentId { get; set; }
         public int FestivalId { get; set; }
         public int UserId { get; set; }
     
-        public virtual ICollection<Comment> Comments1 { get; set; }
-        public virtual Comment Comment1 { get; set; }
         public virtual Festival Festival { get; set; }
         public virtual User User { get; set; }
     }

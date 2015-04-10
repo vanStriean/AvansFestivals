@@ -19,4 +19,26 @@ namespace AvansFestivals.Domain.Database
         Done = 3,
         InProgress = 4
     }
+
+    /* state pattern */ 
+    public static class FestivalStateExtension
+    {
+        public static FestivalState Next(this FestivalState state)
+        {
+            switch (state)
+            {
+                case FestivalState.SoldOut:
+                    return FestivalState.InProgress;
+                case FestivalState.StartSale:
+                    return FestivalState.SoldOut;
+                case FestivalState.Created:
+                    return FestivalState.StartSale;
+                case FestivalState.InProgress:
+                    return FestivalState.Done;
+                default:
+                    return FestivalState.Created;
+            }
+        }
+    }
+    /* state pattern */ 
 }

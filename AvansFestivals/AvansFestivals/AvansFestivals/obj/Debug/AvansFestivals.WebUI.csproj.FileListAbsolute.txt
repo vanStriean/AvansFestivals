@@ -23,6 +23,7 @@ C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Moq.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Newtonsoft.Json.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Ninject.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Owin.dll
+C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Resources.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\System.Web.Helpers.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\System.Web.Mvc.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\System.Web.Optimization.dll
@@ -34,6 +35,7 @@ C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\WebActivatorE
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\WebGrease.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\itextsharp.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\AvansFestivals.Domain.pdb
+C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Resources.pdb
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\log4net.xml
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Moq.xml
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Ninject.xml
@@ -61,6 +63,7 @@ C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Microsoft.Owi
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Microsoft.Owin.Security.Twitter.xml
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\itextsharp.xml
+C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\bin\en\Resources.resources.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\obj\Debug\AvansFestivals.WebUI.csprojResolveAssemblyReference.cache
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\obj\Debug\AvansFestivals.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals\obj\Debug\AvansFestivals.pdb

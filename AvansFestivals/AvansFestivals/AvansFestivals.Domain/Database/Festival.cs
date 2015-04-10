@@ -11,6 +11,7 @@ namespace AvansFestivals.Domain.Database
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Festival
     {
@@ -22,11 +23,24 @@ namespace AvansFestivals.Domain.Database
         }
     
         public int Id { get; set; }
+
+        [Required]
         public string Name { get; set; }
+
+        [Required]
+        [StringLength(5000, MinimumLength = 50, ErrorMessage = "Gebruik minimaal 50 tot met maximaal 5000 karakters")]
         public string Description { get; set; }
+
+        [Required]
         public System.DateTime Start { get; set; }
+        
+        [Required]
         public System.DateTime End { get; set; }
+
+        [Required]
         public string Logo { get; set; }
+
+        [Required]
         public string Banner { get; set; }
         public FestivalState FestivalState { get; set; }
     

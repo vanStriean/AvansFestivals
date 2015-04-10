@@ -1,0 +1,404 @@
+INFO  2015-03-31 11:05:53,998   689ms HomeController         .ctor              - Info
+DEBUG 2015-03-31 11:05:54,024   715ms HomeController         .ctor              - Debug
+INFO  2015-03-31 11:06:57,139 63829ms FestivalController     .ctor              - Info
+DEBUG 2015-03-31 11:06:57,140 63830ms FestivalController     .ctor              - Debug
+INFO  2015-03-31 11:18:41,163   607ms HomeController         .ctor              - Info
+DEBUG 2015-03-31 11:18:41,195   639ms HomeController         .ctor              - Debug
+INFO  2015-03-31 11:20:38,546   900ms HomeController         .ctor              - Info
+DEBUG 2015-03-31 11:20:38,568   922ms HomeController         .ctor              - Debug
+INFO  2015-03-31 11:22:57,190   579ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:22:57,208   597ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:22:57,208   597ms HomeController         .ctor              - Info
+DEBUG 2015-03-31 11:22:57,209   598ms HomeController         .ctor              - Debug
+INFO  2015-03-31 11:23:51,985 55374ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:23:51,987 55376ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:23:51,988 55377ms HomeController         .ctor              - Info
+DEBUG 2015-03-31 11:23:51,988 55377ms HomeController         .ctor              - Debug
+INFO  2015-03-31 11:24:04,518 67906ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:24:04,523 67911ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:24:04,525 67913ms HomeController         .ctor              - Info
+DEBUG 2015-03-31 11:24:04,525 67913ms HomeController         .ctor              - Debug
+INFO  2015-03-31 11:24:24,707 88096ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:24:24,708 88097ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:24:24,709 88098ms HomeController         .ctor              - Info
+DEBUG 2015-03-31 11:24:24,711 88100ms HomeController         .ctor              - Debug
+INFO  2015-03-31 11:25:56,284 179673ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:25:56,287 179676ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:25:56,289 179678ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:25:56,297 179686ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:25:56,305 179694ms stivalBeheerController Index              - Festivals ophalen.
+INFO  2015-03-31 11:25:56,307 179696ms stivalBeheerController Index              - Festivals opgehaald en in een model gestopt.
+INFO  2015-03-31 11:26:01,537 184926ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:26:01,541 184930ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:26:01,542 184931ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:26:01,546 184935ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:28:50,190 353579ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:28:50,191 353580ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:28:50,191 353580ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:28:50,192 353581ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:28:50,193 353582ms stivalBeheerController Index              - Festivals ophalen.
+INFO  2015-03-31 11:28:50,193 353582ms stivalBeheerController Index              - Festivals opgehaald en in een model gestopt.
+INFO  2015-03-31 11:28:54,893 358282ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:28:54,895 358284ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:28:54,895 358284ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:28:54,895 358284ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:45:16,294   446ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:45:16,322   474ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:45:16,322   474ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:45:16,323   475ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:45:48,935 33086ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:45:48,936 33087ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:45:48,936 33087ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:45:48,937 33088ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:49:32,017   488ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:49:32,036   507ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:49:32,036   507ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:49:32,037   508ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:50:35,655 64125ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:50:35,657 64127ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:50:35,657 64127ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:50:35,658 64128ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:51:25,146 113617ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:51:25,147 113618ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:51:25,147 113618ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:51:25,147 113618ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:52:16,000 164471ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:52:16,001 164472ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:52:16,001 164472ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:52:16,001 164472ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 11:52:22,159 170629ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 11:52:22,159 170629ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 11:52:22,159 170629ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 11:52:22,160 170630ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 12:16:52,733 1641203ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 12:16:52,734 1641204ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 12:16:52,735 1641205ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 12:16:52,735 1641205ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 12:17:20,747 1669218ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 12:17:20,748 1669219ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 12:17:20,749 1669220ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 12:17:20,749 1669220ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 12:20:29,481 1857952ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 12:20:29,482 1857953ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 12:20:29,483 1857954ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 12:20:29,483 1857954ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 12:20:57,454 1885924ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 12:20:57,459 1885929ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 12:20:57,460 1885930ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 12:20:57,460 1885930ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 12:21:30,650 1919120ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 12:21:30,652 1919122ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 12:21:30,652 1919122ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 12:21:30,653 1919123ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 13:56:20,683 7609154ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 13:56:20,684 7609155ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 13:56:20,685 7609156ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 13:56:20,685 7609156ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:11:00,255 8488726ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:11:00,256 8488727ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:11:00,256 8488727ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:11:00,256 8488727ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:14:08,352 8676823ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:14:08,353 8676824ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:14:08,353 8676824ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:14:08,353 8676824ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:14:29,608  1886ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:14:29,627  1905ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:14:29,628  1906ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:14:29,628  1906ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:18:44,632   671ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:18:44,655   694ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:18:44,655   694ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:18:44,656   695ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:19:11,604 27642ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:19:11,605 27643ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:19:11,605 27643ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:19:11,605 27643ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:19:49,318 65356ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:19:49,319 65357ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:19:49,319 65357ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:19:49,319 65357ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:20:01,493 77532ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:20:01,494 77533ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:20:01,494 77533ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:20:01,494 77533ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:21:33,570 169608ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:21:33,570 169608ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:21:33,570 169608ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:21:33,570 169608ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:21:57,790 193829ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:21:57,791 193830ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:21:57,791 193830ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:21:57,791 193830ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:22:20,246 216285ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:22:20,247 216286ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:22:20,248 216287ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:22:20,249 216288ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:22:31,139 227177ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:22:31,140 227178ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:22:31,140 227178ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:22:31,141 227179ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:22:45,687 241725ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:22:45,688 241726ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:22:45,688 241726ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:22:45,688 241726ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:23:46,211 302250ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:23:46,211 302250ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:23:46,211 302250ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:23:46,212 302251ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:26:09,899 445937ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:26:09,899 445937ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:26:09,900 445938ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:26:09,900 445938ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:26:27,433 463471ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:26:27,434 463472ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:26:27,434 463472ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:26:27,435 463473ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:27:09,575 505613ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:27:09,575 505613ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:27:09,576 505614ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:27:09,576 505614ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:27:20,973 517011ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:27:20,973 517011ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:27:20,974 517012ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:27:20,974 517012ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:40:33,401 1309439ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:40:33,401 1309439ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:40:33,402 1309440ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:40:33,402 1309440ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 14:42:46,987 1443025ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 14:42:46,990 1443028ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 14:42:46,990 1443028ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 14:42:46,990 1443028ms stivalBeheerController .ctor              - Debug
+INFO  2015-03-31 16:43:24,762   592ms CultureBaseController  .ctor              - Info
+DEBUG 2015-03-31 16:43:24,794   624ms CultureBaseController  .ctor              - Debug
+INFO  2015-03-31 16:43:24,795   625ms stivalBeheerController .ctor              - Info
+DEBUG 2015-03-31 16:43:24,795   625ms stivalBeheerController .ctor              - Debug
+INFO  2015-04-07 11:45:47,629   681ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:45:47,706   758ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:45:47,708   760ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:45:51,278  4330ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:48:34,207  2028ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:48:34,290  2111ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:48:34,291  2112ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:48:35,096  2917ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:49:00,331   484ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:49:00,401   554ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:49:00,402   555ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:49:02,254  2407ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:49:17,600 17753ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:49:17,606 17759ms AccountController      Login              - Maak link voor Login aan in de view
+INFO  2015-04-07 11:49:47,076 47229ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:49:47,141 47294ms AccountController      Login              - Controleer of de loginvelden goed zijn ingevuld, zoniet word de login view gereturned
+INFO  2015-04-07 11:49:47,144 47297ms AccountController      Login              - Controleer of Inloggegevens correct zijn ingevuld, indien ja dan geef word de view getoond
+INFO  2015-04-07 11:49:47,269 47422ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:49:47,270 47423ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:49:47,271 47424ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:49:47,288 47441ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:49:51,143 51296ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:49:51,340 51493ms stivalBeheerController Index              - Festivals ophalen.
+INFO  2015-04-07 11:49:51,341 51494ms stivalBeheerController Index              - Festivals opgehaald en in een model gestopt.
+INFO  2015-04-07 11:50:06,482 66635ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:06,483 66636ms HomeController         Business           - Maak link voor Bussiness aan in de view
+INFO  2015-04-07 11:50:08,625 68778ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:08,626 68779ms HomeController         Contact            - Maak link voor Contact aan in de view
+INFO  2015-04-07 11:50:13,216 73369ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:13,221 73374ms HomeController         Events             - Aantal events per pagina is 8
+INFO  2015-04-07 11:50:13,253 73406ms HomeController         Events             - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:50:17,153 77306ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:17,157 77310ms FestivalController     Index              - Haal festival op a.d.v. id
+INFO  2015-04-07 11:50:17,177 77330ms FestivalController     Index              - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 11:50:17,178 77331ms FestivalController     Index              - Maak lijst met comments aan
+INFO  2015-04-07 11:50:17,219 77372ms FestivalController     Index              - Maak nieuw model voor FestivalModel aan
+INFO  2015-04-07 11:50:17,284 77437ms FestivalController     Index              - Geef model in view terug
+INFO  2015-04-07 11:50:25,143 85296ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:25,167 85320ms FestivalController     Index              - Maak sessie aan voor User
+INFO  2015-04-07 11:50:25,168 85321ms FestivalController     Index              - Controleer of comment correct is
+INFO  2015-04-07 11:50:25,168 85321ms FestivalController     Index              - Voeg comment toe
+INFO  2015-04-07 11:50:41,433 101586ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:41,443 101596ms FestivalController     Index              - Maak sessie aan voor User
+INFO  2015-04-07 11:50:41,443 101596ms FestivalController     Index              - Controleer of comment correct is
+INFO  2015-04-07 11:50:41,443 101596ms FestivalController     Index              - Voeg comment toe
+INFO  2015-04-07 11:50:41,653 101806ms FestivalController     Index              - Geef comment van festival
+INFO  2015-04-07 11:50:41,653 101806ms FestivalController     Index              - Verstuur e-mail user bij een nieuwe reactie op comment
+INFO  2015-04-07 11:50:42,923 103076ms FestivalController     Index              - Geef een RedirectToAction terug
+INFO  2015-04-07 11:50:42,943 103096ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:42,943 103096ms FestivalController     Index              - Haal festival op a.d.v. id
+INFO  2015-04-07 11:50:42,953 103106ms FestivalController     Index              - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 11:50:42,953 103106ms FestivalController     Index              - Maak lijst met comments aan
+INFO  2015-04-07 11:50:42,953 103106ms FestivalController     Index              - Maak nieuw model voor FestivalModel aan
+INFO  2015-04-07 11:50:42,953 103106ms FestivalController     Index              - Geef model in view terug
+INFO  2015-04-07 11:50:46,433 106586ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:50:46,443 106596ms FestivalController     Index              - Maak sessie aan voor User
+INFO  2015-04-07 11:50:46,443 106596ms FestivalController     Index              - Controleer of comment correct is
+INFO  2015-04-07 11:50:46,443 106596ms FestivalController     Index              - Voeg comment toe
+INFO  2015-04-07 11:51:04,644 124797ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:51:04,644 124797ms FestivalController     Index              - Haal festival op a.d.v. id
+INFO  2015-04-07 11:51:04,654 124807ms FestivalController     Index              - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 11:51:04,654 124807ms FestivalController     Index              - Maak lijst met comments aan
+INFO  2015-04-07 11:51:04,654 124807ms FestivalController     Index              - Maak nieuw model voor FestivalModel aan
+INFO  2015-04-07 11:51:04,654 124807ms FestivalController     Index              - Geef model in view terug
+INFO  2015-04-07 11:51:19,204 139357ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:51:19,214 139367ms FestivalController     Tickets            - Geef festival a.d.v. id
+INFO  2015-04-07 11:51:19,214 139367ms FestivalController     Tickets            - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 11:51:19,214 139367ms FestivalController     Tickets            - Maak nieuw model voor TicketOrderModel aan
+INFO  2015-04-07 11:51:19,214 139367ms FestivalController     Tickets            - Geef model van TicketOrderModel terug
+INFO  2015-04-07 11:51:26,134 146287ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:51:26,174 146327ms FestivalController     Tickets            - Maak nieuw model voor TiceketOrderModel aan
+INFO  2015-04-07 11:51:26,174 146327ms FestivalController     Tickets            - Geef een Json terug
+INFO  2015-04-07 11:51:26,244 146397ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:51:26,254 146407ms TicketController       Overview           - Maak sessie aan voor TicketOrderModel
+INFO  2015-04-07 11:51:26,254 146407ms TicketController       Overview           - Geef Overview view en TicketOrderModel terug
+INFO  2015-04-07 11:52:00,884 181037ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:52:00,894 181047ms TicketController       Pay                - Maak paymentModel aan
+INFO  2015-04-07 11:52:00,894 181047ms TicketController       Pay                - Keuze tussen Ideal of Paypal
+INFO  2015-04-07 11:52:00,894 181047ms TicketController       Pay                - Geeft Pay view met model terug
+INFO  2015-04-07 11:52:13,714 193867ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:52:13,724 193877ms TicketController       Pay                - Maak paymentModel aan
+INFO  2015-04-07 11:52:13,724 193877ms TicketController       Pay                - Keuze tussen Ideal of Paypal
+INFO  2015-04-07 11:52:13,724 193877ms TicketController       Pay                - Geeft Pay view met model terug
+INFO  2015-04-07 11:52:26,974 207127ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:52:26,994 207147ms TicketController       Order              - Maak Payment Strategy aan
+INFO  2015-04-07 11:52:26,994 207147ms TicketController       Order              - Sessie voor TicketOrderModel aanmaken
+INFO  2015-04-07 11:52:26,994 207147ms TicketController       Order              - Maak nieuwe Order aan
+INFO  2015-04-07 11:52:27,004 207157ms TicketController       Order              - Indien gekozen voor Earlybird kaarten toevoegen aan Order
+INFO  2015-04-07 11:52:27,014 207167ms TicketController       Order              - Indien gekozen voor Normaal kaarten toevoegen aan Order
+INFO  2015-04-07 11:52:27,014 207167ms TicketController       Order              - Indien gekozen voor VIP kaarten toevoegen aan Order
+INFO  2015-04-07 11:52:27,014 207167ms TicketController       Order              - Order toevoegen aan users
+INFO  2015-04-07 11:52:27,034 207187ms TicketController       Order              - Order opslaan
+INFO  2015-04-07 11:52:27,124 207277ms TicketController       Order              - E-mail sturen met de kaarten naar user
+INFO  2015-04-07 11:52:27,124 207277ms TicketController       Order              - View teruggeven
+INFO  2015-04-07 11:52:52,974 233127ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:52:52,974 233127ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:52:52,974 233127ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:52:53,024 233177ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:52:58,904 239057ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:52:58,904 239057ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:52:58,904 239057ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:52:58,924 239077ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:53:02,746 242899ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:53:02,746 242899ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:53:02,746 242899ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:53:02,756 242909ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:53:08,406 248559ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:53:08,416 248569ms stivalBeheerController Index              - Festivals ophalen.
+INFO  2015-04-07 11:53:08,416 248569ms stivalBeheerController Index              - Festivals opgehaald en in een model gestopt.
+INFO  2015-04-07 11:56:25,590 445743ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:56:25,591 445744ms FestivalController     Index              - Haal festival op a.d.v. id
+INFO  2015-04-07 11:56:25,602 445755ms FestivalController     Index              - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 11:56:25,602 445755ms FestivalController     Index              - Maak lijst met comments aan
+INFO  2015-04-07 11:56:25,605 445758ms FestivalController     Index              - Maak nieuw model voor FestivalModel aan
+INFO  2015-04-07 11:56:25,611 445764ms FestivalController     Index              - Geef model in view terug
+INFO  2015-04-07 11:56:27,607 447760ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:56:27,621 447774ms FestivalController     Tickets            - Geef festival a.d.v. id
+INFO  2015-04-07 11:56:27,625 447778ms FestivalController     Tickets            - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 11:56:27,626 447779ms FestivalController     Tickets            - Maak nieuw model voor TicketOrderModel aan
+INFO  2015-04-07 11:56:27,626 447779ms FestivalController     Tickets            - Geef model van TicketOrderModel terug
+INFO  2015-04-07 11:56:31,617 451770ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:56:31,622 451775ms FestivalController     Tickets            - Maak nieuw model voor TiceketOrderModel aan
+INFO  2015-04-07 11:56:31,625 451778ms FestivalController     Tickets            - Geef een Json terug
+INFO  2015-04-07 11:56:31,705 451858ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:56:31,711 451864ms TicketController       Overview           - Maak sessie aan voor TicketOrderModel
+INFO  2015-04-07 11:56:31,711 451864ms TicketController       Overview           - Geef Overview view en TicketOrderModel terug
+INFO  2015-04-07 11:58:06,665 546818ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:58:06,665 546818ms AccountController      Logout             - Maak link voor Logout aan in de view
+INFO  2015-04-07 11:58:06,727 546880ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:58:06,727 546880ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:58:06,727 546880ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:58:06,743 546896ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:58:09,364 549517ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:58:09,364 549517ms FestivalController     Index              - Haal festival op a.d.v. id
+INFO  2015-04-07 11:58:09,364 549517ms FestivalController     Index              - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 11:58:09,364 549517ms FestivalController     Index              - Maak lijst met comments aan
+INFO  2015-04-07 11:58:09,379 549532ms FestivalController     Index              - Maak nieuw model voor FestivalModel aan
+INFO  2015-04-07 11:58:09,379 549532ms FestivalController     Index              - Geef model in view terug
+INFO  2015-04-07 11:58:16,509 556662ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:58:16,509 556662ms AccountController      Login              - Maak link voor Login aan in de view
+INFO  2015-04-07 11:58:50,240 590393ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:58:50,240 590393ms HomeController         Events             - Aantal events per pagina is 8
+INFO  2015-04-07 11:58:50,256 590409ms HomeController         Events             - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:58:57,151 597304ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:58:57,151 597304ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:58:57,151 597304ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:58:57,166 597319ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:59:35,402 635555ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:59:35,402 635555ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:59:35,402 635555ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:59:35,433 635586ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 11:59:48,026 648179ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:59:48,026 648179ms AccountController      Login              - Maak link voor Login aan in de view
+INFO  2015-04-07 11:59:53,314 653467ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:59:53,314 653467ms AccountController      Login              - Controleer of de loginvelden goed zijn ingevuld, zoniet word de login view gereturned
+INFO  2015-04-07 11:59:53,330 653483ms AccountController      Login              - Controleer of Inloggegevens correct zijn ingevuld, indien ja dan geef word de view getoond
+INFO  2015-04-07 11:59:53,408 653561ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 11:59:53,408 653561ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 11:59:53,408 653561ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 11:59:53,423 653576ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-07 12:00:00,053 660206ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 12:00:00,053 660206ms FestivalController     Index              - Haal festival op a.d.v. id
+INFO  2015-04-07 12:00:00,069 660222ms FestivalController     Index              - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-07 12:00:00,069 660222ms FestivalController     Index              - Maak lijst met comments aan
+INFO  2015-04-07 12:00:00,069 660222ms FestivalController     Index              - Maak nieuw model voor FestivalModel aan
+INFO  2015-04-07 12:00:00,069 660222ms FestivalController     Index              - Geef model in view terug
+INFO  2015-04-07 12:00:08,508 668661ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 12:00:08,524 668677ms stivalBeheerController Index              - Festivals ophalen.
+INFO  2015-04-07 12:00:08,524 668677ms stivalBeheerController Index              - Festivals opgehaald en in een model gestopt.
+INFO  2015-04-07 12:00:55,527 715680ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 12:00:55,527 715680ms HomeController         About              - Maak link voor About aan in de view
+INFO  2015-04-07 12:00:56,588 716741ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-07 12:00:56,588 716741ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-07 12:00:56,588 716741ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-07 12:00:56,603 716756ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-08 11:11:27,997  3393ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:11:28,101  3497ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-08 11:11:28,103  3499ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-08 11:11:29,256  4651ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-08 11:12:36,754   900ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:12:36,864  1010ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-08 11:12:36,866  1012ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-08 11:12:39,772  3917ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-08 11:13:30,798 54944ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:30,800 54946ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-08 11:13:30,804 54950ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-08 11:13:30,833 54979ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-08 11:13:33,856 58001ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:33,952 58097ms FestivalController     Index              - Haal festival op a.d.v. id
+INFO  2015-04-08 11:13:34,012 58157ms FestivalController     Index              - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-08 11:13:34,013 58158ms FestivalController     Index              - Maak lijst met comments aan
+INFO  2015-04-08 11:13:34,175 58320ms FestivalController     Index              - Maak nieuw model voor FestivalModel aan
+INFO  2015-04-08 11:13:34,236 58381ms FestivalController     Index              - Geef model in view terug
+INFO  2015-04-08 11:13:37,686 61831ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:37,688 61833ms AccountController      Login              - Maak link voor Login aan in de view
+INFO  2015-04-08 11:13:46,305 70451ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:46,331 70477ms AccountController      Login              - Controleer of de loginvelden goed zijn ingevuld, zoniet word de login view gereturned
+INFO  2015-04-08 11:13:46,334 70480ms AccountController      Login              - Controleer of Inloggegevens correct zijn ingevuld, indien ja dan geef word de view getoond
+INFO  2015-04-08 11:13:46,534 70680ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:46,536 70682ms HomeController         Index              - Opkomende festivals ophalen
+INFO  2015-04-08 11:13:46,536 70682ms HomeController         Index              - Random festivals ophalen
+INFO  2015-04-08 11:13:46,550 70696ms HomeController         Index              - FestivalListModel maken en weergeven in view
+INFO  2015-04-08 11:13:51,147 75292ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:51,248 75393ms FestivalController     Tickets            - Geef festival a.d.v. id
+INFO  2015-04-08 11:13:51,251 75396ms FestivalController     Tickets            - Indien festival is NULL geef een HttpNotFound terug
+INFO  2015-04-08 11:13:51,252 75397ms FestivalController     Tickets            - Maak nieuw model voor TicketOrderModel aan
+INFO  2015-04-08 11:13:51,254 75399ms FestivalController     Tickets            - Geef model van TicketOrderModel terug
+INFO  2015-04-08 11:13:59,815 83960ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:59,839 83984ms FestivalController     Tickets            - Maak nieuw model voor TiceketOrderModel aan
+INFO  2015-04-08 11:13:59,845 83990ms FestivalController     Tickets            - Geef een Json terug
+INFO  2015-04-08 11:13:59,951 84096ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:13:59,966 84111ms TicketController       Overview           - Maak sessie aan voor TicketOrderModel
+INFO  2015-04-08 11:13:59,968 84113ms TicketController       Overview           - Geef Overview view en TicketOrderModel terug
+INFO  2015-04-08 11:14:05,295 89441ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:14:05,317 89463ms TicketController       Pay                - Maak paymentModel aan
+INFO  2015-04-08 11:14:05,321 89467ms TicketController       Pay                - Keuze tussen Ideal of Paypal
+INFO  2015-04-08 11:14:05,324 89470ms TicketController       Pay                - Geeft Pay view met model terug
+INFO  2015-04-08 11:14:08,311 92456ms CultureBaseController  BeginExecuteCore   - Controleer cookie en zet de website op de juiste taal(Engels of Nederlands)
+INFO  2015-04-08 11:14:08,335 92480ms TicketController       Order              - Maak Payment Strategy aan
+INFO  2015-04-08 11:14:08,337 92482ms TicketController       Order              - Sessie voor TicketOrderModel aanmaken
+INFO  2015-04-08 11:14:08,341 92486ms TicketController       Order              - Maak nieuwe Order aan
+INFO  2015-04-08 11:14:08,354 92499ms TicketController       Order              - Indien gekozen voor Earlybird kaarten toevoegen aan Order
+INFO  2015-04-08 11:14:08,360 92505ms TicketController       Order              - Indien gekozen voor Normaal kaarten toevoegen aan Order
+INFO  2015-04-08 11:14:08,362 92507ms TicketController       Order              - Indien gekozen voor VIP kaarten toevoegen aan Order
+INFO  2015-04-08 11:14:08,364 92509ms TicketController       Order              - Order toevoegen aan users
+INFO  2015-04-08 11:14:08,394 92539ms TicketController       Order              - Order opslaan
+INFO  2015-04-08 11:14:08,713 92858ms TicketController       Order              - E-mail sturen met de kaarten naar user
+INFO  2015-04-08 11:14:10,709 94854ms TicketController       Order              - View teruggeven

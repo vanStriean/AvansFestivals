@@ -19,10 +19,8 @@ namespace AvansFestivals.Domain.Database
         public TicketType TicketType { get; set; }
         public int FestivalId { get; set; }
         public int OrderItemId { get; set; }
-        public int UserId { get; set; }
     
         public virtual Festival Festival { get; set; }
         public virtual OrderItem OrderItem { get; set; }
-        public virtual User User { get; set; }
     }
 }

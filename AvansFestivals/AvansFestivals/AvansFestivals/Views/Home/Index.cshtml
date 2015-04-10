@@ -16,13 +16,13 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <h2>Aankomende Evenementen</h2>
+        <h2>@Resource.UpcomingEvents</h2>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Evenement</th>
-                        <th>Datum</th>
+                        <th>@Resource.Event</th>
+                        <th>@Resource.Date</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -30,12 +30,12 @@
                     @foreach (var e in Model.Festivals) { 
                     <tr>
                         <td>@e.Name</td>
-                        <td>Van <span class="label label-primary">@e.Start.ToShortDateString()</span> t/m <span class="label label-primary">@e.End.ToShortDateString()</span></td>
+                        <td>@Resource.From <span class="label label-primary">@e.Start.ToShortDateString()</span> @Resource.Until <span class="label label-primary">@e.End.ToShortDateString()</span></td>
                         <td>
-                            <a href="@Url.Action("Index", "Festival", new { id = e.Id })" class="btn btn-primary btn-sm">Bekijk <span class="glyphicon glyphicon-search"></span></a>
+                            <a href="@Url.Action("Index", "Festival", new { id = e.Id })" class="btn btn-primary btn-sm">@Resource.Checkout <span class="glyphicon glyphicon-search"></span></a>
                             @if (Session["User"] != null)
                             {
-                                <a href="@Url.Action("Tickets", "Festival", new { id = e.Id })" class="btn btn-primary btn-sm">Tickets <span class="glyphicon glyphicon-tags"></span></a>
+                                <a href="@Url.Action("Tickets", "Festival", new { id = e.Id })" class="btn btn-primary btn-sm">@Resource.Tickets <span class="glyphicon glyphicon-tags"></span></a>
                             }
                         </td>    
                     </tr>

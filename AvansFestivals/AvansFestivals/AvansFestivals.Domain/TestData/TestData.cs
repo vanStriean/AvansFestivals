@@ -13,6 +13,63 @@ namespace AvansFestivals.Domain.TestData
 
         public static void Fill(int amount)
         {
+            User user = new User()
+            {
+                Firstname = "Test",
+                Lastname = "de Tester",
+                Email = "avansfestivals@gmail.com",
+                Age = 21,
+                Username = "Test",
+                Password = "qwerty"
+            };
+
+            User user2 = new User()
+            {
+                Firstname = "Gebruiker",
+                Lastname = "de Gebruiker",
+                Email = "avansfestivals@gmail.com",
+                Age = 21,
+                Username = "Gebruiker",
+                Password = "qwerty"
+            };
+
+            Role role = new Role()
+            {
+                Name = "Administrator"
+            };
+
+
+            Role role1 = new Role()
+            {
+                Name = "User"
+            };
+
+            Role role2 = new Role()
+            {
+                Name = "Manager"
+            };
+
+
+            UserAndRole userandrole1 = new UserAndRole();
+            userandrole1.Role = role;
+            userandrole1.User = user;
+            db.UserAndRoles.Add(userandrole1);
+
+            UserAndRole userandrole2 = new UserAndRole();
+            userandrole2.Role = role1;
+            userandrole2.User = user;
+            db.UserAndRoles.Add(userandrole2);
+
+            UserAndRole userandrole3 = new UserAndRole();
+            userandrole3.Role = role2;
+            userandrole3.User = user;
+            db.UserAndRoles.Add(userandrole3);
+
+            UserAndRole userandrole4 = new UserAndRole();
+            userandrole4.Role = role1;
+            userandrole4.User = user2;
+            db.UserAndRoles.Add(userandrole4);
+
             double startDate = 0;
             double endDate = 3;
             for (int i = 0; i < amount; i++)
@@ -48,26 +105,22 @@ namespace AvansFestivals.Domain.TestData
                     Amount = 100,
                     Price = 22.5
                 };
+
+                Comment comment = new Comment()
+                {
+                    Message = "Dit is een automatische test comment",
+                    Created = DateTime.Now,
+                    UserId = user.Id
+                };
+
+                fest.Comments.Add(comment);
                 fest.TicketAmounts.Add(normAmount);
                 fest.TicketAmounts.Add(earlyAmount);
                 fest.TicketAmounts.Add(vipAmount);
 
                 db.Festivals.Add(fest);
             }
-
-            User user = new User()
-            {
-                Firstname = "Test",
-                Lastname = "de Tester",
-                Email = "test@test.nl",
-                Age = 21,
-                Username = "Test",
-                Password = "qwerty",
-                Role = "Admin"
-            };
-
-            db.Users.Add(user);
-
+            
             db.SaveChanges();
         }
     }

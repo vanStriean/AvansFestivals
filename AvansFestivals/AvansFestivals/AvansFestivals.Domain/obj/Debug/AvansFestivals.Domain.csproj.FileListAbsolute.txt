@@ -7,6 +7,6 @@ C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\bin\Debug\
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\bin\Debug\EntityFramework.xml
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\bin\Debug\EntityFramework.SqlServer.xml
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\bin\Debug\itextsharp.xml
-C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\obj\Debug\AvansFestivals.Domain.csprojResolveAssemblyReference.cache
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\obj\Debug\AvansFestivals.Domain.dll
 C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\obj\Debug\AvansFestivals.Domain.pdb
+C:\AvansFestivals\AvansFestivals\AvansFestivals\AvansFestivals.Domain\obj\Debug\AvansFestivals.Domain.csprojResolveAssemblyReference.cache

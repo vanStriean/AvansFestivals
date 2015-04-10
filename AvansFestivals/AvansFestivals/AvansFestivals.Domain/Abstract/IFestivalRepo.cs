@@ -15,11 +15,7 @@ namespace AvansFestivals.Domain.Abstract
         IEnumerable<Festival> getUpcomingFirstTen();
         IEnumerable<Festival> getUpcoming();
         IEnumerable<Festival> GetRandomFestivals(int amount);
-        Festival ChangeStateToDone(Festival festival);
-        Festival ChangeStateToCreated(Festival festival);
-        Festival ChangeStateToInProgress(Festival festival);
-        Festival ChangeStateToStartSale(Festival festival);
-        Festival ChangeStateToSoldOut(Festival festival);
+        Festival NextState(Festival festival);
         Festival GetFestival(int id);
         void RemoveFestival(Festival festival);
         void EditFestival(Festival festival);

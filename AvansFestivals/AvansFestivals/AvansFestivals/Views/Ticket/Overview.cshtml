@@ -1,25 +1,20 @@
 ﻿@using AvansFestivals.Models
 @model TicketOrderModel
-@{
-    ViewBag.Title = "Overview";
-}
-
 
 @if (Model != null)
 {
-
-    <h2>Bestellingsoverzicht</h2>
+    <h2>@Resource.TicketOrderOverView</h2>
     <hr />
     <div class="row">
         <div class="col-sm-6"></div>
         <div class="col-sm-6">
             <div class="well well-sm">
                 <dl>
-                    <dt>Evenement:</dt>
+                    <dt>@Resource.Event</dt>
                     <dd>@Model.Festival.Name</dd>
-                    <dt>Datum:</dt>
+                    <dt>@Resource.Date</dt>
                     <dd>@Model.Festival.Start</dd>
-                    <dt>Locatie:</dt>
+                    <dt>@Resource.Location</dt>
                     <dd>De locatie</dd>
                 </dl>
             </div>
@@ -30,16 +25,16 @@
             <div class="well well-sm well-inverse"><strong>Uw gegevens</strong></div>
             <table class="table table-striped">
                 <tr>
-                    <td width="230"><div align="right">Naam:</div></td>
+                    <td width="230"><div align="right">@Resource.Name</div></td>
                     <td width="846" style="min-width: 80px;">@Model.User.Firstname @Model.User.Lastname</td>
                 </tr>
 
                 <tr>
-                    <td><div align="right">Email:</div></td>
+                    <td><div align="right">@Resource.Email</div></td>
                     <td>@Model.User.Email</td>
                 </tr>
             </table>
-            <div class="well well-sm well-inverse"><strong>Bestelling</strong></div>
+            <div class="well well-sm well-inverse"><strong>@Resource.Order</strong></div>
             <table class="table table-striped">
                 @if (Model.Tickets.Earlybird > 0)
                 {
@@ -63,19 +58,19 @@
                     </tr>
                 }
             </table>
-            <div class="well well-sm well-inverse"><strong>Betaling</strong></div>
+            <div class="well well-sm well-inverse"><strong>@Resource.Payment</strong></div>
             <table class="table table-striped">
                 <tbody>
                     <tr>
-                        <td width="180"><div align="right">Totaalbedrag</div></td>
+                        <td width="180"><div align="right">@Resource.TotalAmount</div></td>
                         <td style="min-width: 80px;">€ @Model.getTotalPrice()</td>
                     </tr>
                     <tr>
-                        <td><div align="right">Betaalmethode</div></td>
+                        <td><div align="right">@Resource.PaymentMethod</div></td>
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                    Kies uw betaalmethode
+                                    @Resource.ChoicePaymentMethod
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" id="dropdown1" aria-labelledby="dropdownMenu1">
@@ -104,7 +99,7 @@
                 </tbody>
             </table>
         </section>
-        <a href="@Url.Action("Order", "Ticket")" id="orderButton" class="btn btn-primary next pull-right">Afronden <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a href="#" id="orderButton" class="btn btn-primary next pull-right">@Resource.Finish<span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <script>
     $().ready(function () {
@@ -134,8 +129,13 @@
             $("#dropdownMenu2").html($(this).text() + " <span class='caret'></span");
             $("#orderButton").removeClass("disabled");
         });
+
+        $("#orderButton").click(function () {
+            if(payMethod == "ideal")
+                location.href = "@Url.Action("Pay", "Ticket", new { strategy = "ideal" })";
+            else
+                location.href = "@Url.Action("Pay", "Ticket", new { strategy = "paypal" })"
+        });
     });
     </script>
-
-
 }

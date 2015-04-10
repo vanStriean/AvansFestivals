@@ -17,7 +17,8 @@ namespace AvansFestivals.Domain.Database
         public User()
         {
             this.Comments = new HashSet<Comment>();
-            this.Tickets = new HashSet<Ticket>();
+            this.Orders = new HashSet<Order>();
+            this.UserAndRoles = new HashSet<UserAndRole>();
         }
     
         public int Id { get; set; }
@@ -27,9 +28,9 @@ namespace AvansFestivals.Domain.Database
         public int Age { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
     
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<Ticket> Tickets { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<UserAndRole> UserAndRoles { get; set; }
     }
 }

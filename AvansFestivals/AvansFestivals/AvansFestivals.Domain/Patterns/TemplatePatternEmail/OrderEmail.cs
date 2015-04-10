@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AvansFestivals.Domain.Database;
+using AvansFestivals.Domain.Patterns.ProxyPatternPDF;
 
 namespace AvansFestivals.Domain.Patterns.TemplatePatternEmail
 {
@@ -21,24 +22,36 @@ namespace AvansFestivals.Domain.Patterns.TemplatePatternEmail
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("<p> Welkom bij avans tickets, bedankt voor het regeistreren.</p>");
-            sb.Append("<p> U kunt nu aan de slag om festival tickets aan te kopen.</p>");
+            sb.Append("<p> Order: "+ order.Id.ToString() + "</p>");
+            sb.Append("<p> De ticket zitten in de email.</p>");
 
             return sb.ToString();
         }
 
         public override string getEmailSubject()
         {
-            string subject = "Ticket Order Avans Festivals.";
+            string subject = "Ticket Order: " + order.Id.ToString() + " Avans Festivals.";
 
             return subject;
         }
 
-        public override string getFilepath() // als de filepath "" bevat wordt er niets meegestuurd.
+        public override List<string> getFilepath() 
         {
-            string filePath = "";
+            List<string> filepaths = new List<string>();
 
-            return filePath;
+            /* proxy pattern */
+            ProxyPDF proxy = new ProxyPDF();
+
+            foreach (OrderItem item in order.OrderItems)
+            {
+               foreach (Ticket ticket in item.Tickets)
+               {
+                   filepaths.Add(proxy.Create(ticket));
+               }
+            }
+            /* proxy pattern */
+
+            return filepaths;
         }
     }
 }

@@ -21,7 +21,9 @@ namespace AvansFestivals.Domain.Database
     
         public int Id { get; set; }
         public System.DateTime Ordered { get; set; }
+        public int UserId { get; set; }
     
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual User User { get; set; }
     }
 }

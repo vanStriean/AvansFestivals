@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AvansFestivals.Domain.Abstract;
 using AvansFestivals.Domain.Database;
-using AvansFestivals.Domain.Patterns.StatePattern;
 using AvansFestivals.Domain.Patterns.FactoryPatternTickets;
 using System.Data.Entity;
 
@@ -57,38 +56,10 @@ namespace AvansFestivals.Domain.Concrete
             return randFests.AsEnumerable();
         }
 
-
-        public Festival ChangeStateToDone(Festival festival)
+        // State Pattern
+        public Festival NextState(Festival festival)
         {
-            festival.FestivalState = new DoneState().ChangeState();
-            db.SaveChanges();
-            return festival;
-        }
-
-        public Festival ChangeStateToCreated(Festival festival)
-        {
-            festival.FestivalState = new CreatedState().ChangeState();
-            db.SaveChanges();
-            return festival;
-        }
-
-        public Festival ChangeStateToInProgress(Festival festival)
-        {
-            festival.FestivalState = new InProgressState().ChangeState();
-            db.SaveChanges();
-            return festival;
-        }
-
-        public Festival ChangeStateToStartSale(Festival festival)
-        {
-            festival.FestivalState = new StartSaleState().ChangeState();
-            db.SaveChanges();
-            return festival;
-        }
-
-        public Festival ChangeStateToSoldOut(Festival festival)
-        {
-            festival.FestivalState = new SoldOutState().ChangeState();
+            festival.FestivalState = FestivalStateExtension.Next(festival.FestivalState);
             db.SaveChanges();
             return festival;
         }

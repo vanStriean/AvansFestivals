@@ -1,0 +1,5 @@
+﻿@model AvansFestivals.Domain.Database.Comment
+<dl>
+    <dt>@Model.User.Firstname @Model.User.Lastname (@Model.Created.ToShortDateString() @Model.Created.ToShortTimeString())</dt>
+    <dd>@Model.Message</dd>
+</dl>

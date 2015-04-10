@@ -1,13 +1,8 @@
 ﻿@using AvansFestivals.Models
 @model TicketOrderModel
-@{
-    ViewBag.Title = "Tickets";
-}
-
-
 @if (Model.User != null)
 {
-    <h2>Maak uw ticketkeuze</h2>
+    <h2>@Resource.MakeYourTicketChoice</h2>
     <hr />
     <div class="row">
         <div class="col-sm-6">
@@ -16,12 +11,12 @@
         <div class="col-sm-6">
             <div class="well well-sm">
                 <dl>
-                    <dt>Evenement:</dt>
+                    <dt>@Resource.Event</dt>
                     <dd>@Model.Festival.Name</dd>
-                    <dt>Datum:</dt>
+                    <dt>@Resource.Date</dt>
                     <dd>@Model.Festival.Start.ToShortDateString()
                     <dd>
-                    <dt>Locatie:</dt>
+                    <dt>@Resource.Location</dt>
                     <dd>@Model.Festival.Start.ToShortDateString()</dd>
                 </dl>
             </div>
@@ -34,8 +29,8 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th style="min-width: 80px;">Prijs</th>
-                    <th style="width: 140px;">Aantal</th>
+                    <th style="min-width: 80px;">@Resource.Price</th>
+                    <th style="width: 140px;">@Resource.Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -114,13 +109,13 @@
             </tbody>
             <tfoot>
                 <tr class="success">
-                    <td><strong>Totaal</strong></td>
-                    <td><strong>€ <span id="totalAmount"></span></strong></td>
+                    <td><strong>@Resource.Total</strong></td>
+                    <td><strong>€ <span id="totalAmount">0.0</span></strong></td>
                     <td><div class="text-center" style="width: 42px"><strong><span id="totalQuantity">0</span></strong></div></td>
                 </tr>
             </tfoot>
         </table>
-        <a href="#" id="submitButton" class="btn btn-primary next pull-right">Volgende <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a href="#" id="submitButton" class="btn btn-primary next pull-right">@Resource.Next <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
 
     <script>
@@ -261,7 +256,6 @@
 
             function calculatePrice() {
                 totalPrice = parseFloat(($("#earlyPrice").html() * $("#earlyType").val()) + ($("#normalPrice").html() * $("#normalType").val()) + ($("#vipPrice").html() * $("#vipType").val()));
-
                 $("#totalAmount").html(totalPrice);
             }
 
@@ -272,7 +266,7 @@ else
 {
     <p>&nbsp;</p>
     <div class="alert alert-danger" role="alert">
-        <strong>Niet ingelogd!</strong> Om tickets te bestellen moet je ingelogd zijn!
-        <a href="@Url.Action("Login", "Account")" class="alert-link">Log hier in</a>
+        <strong>@Resource.NotLogged</strong>@Resource.OrderTicketLogged!
+        <a href="@Url.Action("Login", "Account")" class="alert-link">@Resource.PleaseLogin</a>
     </div>
 }

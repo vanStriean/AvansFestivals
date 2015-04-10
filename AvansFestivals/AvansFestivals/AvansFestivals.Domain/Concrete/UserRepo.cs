@@ -24,12 +24,17 @@ namespace AvansFestivals.Domain.Concrete
 
         public bool IsInRole(User user, string role)
         {
-            return db.Users.Find(user).Role == role;
+           //[ return db.Users.Find(user).Role == role;
+            return false;
         }
 
         public bool CreateUser(User user)
         {
-            db.Users.Add(user);
+            UserAndRole uar = new UserAndRole();
+            Role role1 = db.Role.Find(2);
+            uar.User = user;
+            uar.Role = role1;
+            db.UserAndRoles.Add(uar);
             db.SaveChanges();
             return true;
         }

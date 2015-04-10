@@ -10,7 +10,7 @@ using AvansFestivals.Domain.Patterns.TemplatePatternEmail;
 
 namespace AvansFestivals.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : CultureBaseController
     {
 
         IUserRepo userProvider;
@@ -24,32 +24,37 @@ namespace AvansFestivals.Controllers
 
         public ActionResult Login()
         {
+            logger.Info("Maak link voor Login aan in de view");
             return View();
         }
 
         [HttpPost]
         public ActionResult Login(LoginModel model)
         {
-            if (!ModelState.IsValid)
+            logger.Info("Controleer of de loginvelden goed zijn ingevuld, zoniet word de login view gereturned");
+            if (ModelState.IsValid)
             {
-                return View(model);
-            }
+
+           logger.Info("Controleer of Inloggegevens correct zijn ingevuld, indien ja dan geef word de view getoond");
             if (userProvider.CheckLogin(model.Username, model.Password))
             {
                 Session["User"] = userProvider.GetUser(model.Username);
                 return RedirectToAction("Index", "Home");
             }
-            return View();
+            }
+            return View(model);
         }
 
         public ActionResult Register()
         {
+            logger.Info("Maak link voor Register aan in de view");
             return View();
         }
 
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
+            logger.Info("Controleer of alle velden correct zijn ingevoerd om een account aan te maken.");
             if (ModelState.IsValid && Session["User"] == null)
             {
                 User user = new User() 
@@ -60,7 +65,7 @@ namespace AvansFestivals.Controllers
                     Email = model.Email,
                     Username = model.Username,
                     Password = model.Password,
-                    Role = "User"
+                    
                 };
 
                 Email email = new NewUserEmail(user);
@@ -75,6 +80,8 @@ namespace AvansFestivals.Controllers
 
         public ActionResult Logout()
         {
+            logger.Info("Maak link voor Logout aan in de view");
+
             Session.Remove("User");
             return RedirectToAction("Index", "Home");
         }
@@ -82,6 +89,7 @@ namespace AvansFestivals.Controllers
         [HttpPost]
         public JsonResult CheckAvailabilty(string Username)
         {
+            logger.Info("Controleer of gebruikersnaam in gebruik is");
             return Json(userProvider.GetUser(Username) == null);
         }
     }

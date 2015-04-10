@@ -176,15 +176,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CultureBaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FestivalController.cs" />
     <Compile Include="Controllers\FestivalBeheerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Filters\AuthorizeFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\CultureHelper.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\FestivalModel.cs" />
+    <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Models\TicketOrderModel.cs" />
     <Compile Include="Models\FestivalListModel.cs">
       <SubType>Code</SubType>
@@ -198,13 +204,17 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datepicker.css" />
     <Content Include="Content\Images\ps_neutral.png" />
+    <Content Include="Content\js\bootstrap-datepicker.js" />
+    <Content Include="Content\js\jquery.cookie.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\datepicker.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -249,9 +259,15 @@
     <Content Include="Views\FestivalBeheer\Index.cshtml" />
     <Content Include="Views\FestivalBeheer\EditTicketAmount.cshtml" />
     <Content Include="Views\FestivalBeheer\DeleteTicketAmount.cshtml" />
+    <Content Include="Views\Festival\_CommentPartail.cshtml" />
+    <Content Include="Views\Festival\_AddCommentPartail.cshtml" />
+    <Content Include="Views\Ticket\Pay.cshtml" />
+    <Content Include="Views\Error\UnAuthorized.cshtml" />
+    <Content Include="Views\Error\NoAccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CultureBase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -267,6 +283,10 @@
     <ProjectReference Include="..\AvansFestivals.Domain\AvansFestivals.Domain.csproj">
       <Project>{7787a5d4-bf06-44c8-b5d7-fe1920223e9a}</Project>
       <Name>AvansFestivals.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{6b41a4e7-11f3-4501-8d80-e1899d556ef8}</Project>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

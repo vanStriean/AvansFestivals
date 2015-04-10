@@ -9,49 +9,49 @@
     <h2>Registreren</h2>
     <hr />
     <div class="form-group">
-        @Html.LabelFor(m => m.Firstname, new { @class = "col-md-2 control-label" })
+        <label for="Firstname" class="col-md-2 control-label">@Resource.Firstname</label>
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Firstname, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Lastname, new { @class = "col-md-2 control-label" })
+        <label for="Lastname" class="col-md-2 control-label">@Resource.Lastname</label>
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Lastname, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
+        <label for="Age" class="col-md-2 control-label">@Resource.Age</label>
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <label for="Email" class="col-md-2 control-label">@Resource.Email</label>
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
+        <label for="Username" class="col-md-2 control-label">@Resource.Username</label>
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <label for="Password" class="col-md-2 control-label">@Resource.Password</label>
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <label for="ConfirmPassword" class="col-md-2 control-label">@Resource.ConfirmPassword</label>
         <div class="col-md-10">
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
@@ -59,7 +59,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-primary" value="Registreer" />
+            <input type="submit" class="btn btn-primary" value="@Resource.Register" />
         </div>
     </div>
 }

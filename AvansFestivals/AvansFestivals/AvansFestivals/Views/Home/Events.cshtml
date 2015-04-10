@@ -3,7 +3,7 @@
     ViewBag.Title = "Festivals";
 }
 
-<h2>Alle Evenementen</h2>
+<h2>@Resource.AllEvents</h2>
 <hr />
 <div class="row">
     @foreach (var e in Model.Festivals)
@@ -18,10 +18,10 @@
                     </div>
                     <p>@e.Description.Substring(0, 110) ...</p>
                     <p>
-                        <a href="@Url.Action("Index", "Festival", new { id = e.Id })" class="btn btn-primary" role="button">Bekijk <span class="glyphicon glyphicon-search"></span></a>
+                        <a href="@Url.Action("Index", "Festival", new { id = e.Id })" class="btn btn-primary" role="button">@Resource.Checkout <span class="glyphicon glyphicon-search"></span></a>
                         @if (Session["User"] != null)
                         {
-                            <a href="@Url.Action("Order", "Ticket", new { id = e.Id })" class="btn btn-primary pull-right">Tickets<span class="glyphicon glyphicon-tags"></span></a>
+                            <a href="@Url.Action("Order", "Ticket", new { id = e.Id })" class="btn btn-primary pull-right">@Resource.Tickets <span class="glyphicon glyphicon-tags"></span></a>
                         }
                     </p>
                 </div>

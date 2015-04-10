@@ -15,7 +15,7 @@ namespace AvansFestivals.Domain.Patterns.TemplatePatternEmail
 
         public abstract string getEmailBody();
         public abstract string getEmailSubject();
-        public abstract string getFilepath(); // als de filepath "" bevat wordt er niets meegestuurd.
+        public abstract List<string> getFilepath(); // als de filepath "" bevat wordt er niets meegestuurd.
 
         public SmtpClient getSmtpSettings()
         {
@@ -46,7 +46,7 @@ namespace AvansFestivals.Domain.Patterns.TemplatePatternEmail
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("<p> Beste" + user.Firstname + " " + user.Lastname + ",");
+            sb.Append("<p> Beste " + user.Firstname + " " + user.Lastname + ",");
             sb.Append("<p> Dit is een automatisch verstuurd bericht van de AvansFestival Ticket Systeem. </p>");
 
             return sb.ToString();
@@ -71,11 +71,14 @@ namespace AvansFestivals.Domain.Patterns.TemplatePatternEmail
             msg.Subject = getEmailSubject();
             msg.IsBodyHtml = true;
 
-            string filePath = getFilepath();
+            List<string> filePath = getFilepath();
 
-            if (filePath != "")
+            if (filePath != null || filePath.All(x => string.IsNullOrWhiteSpace(x)))
             {
-                msg.Attachments.Add(new Attachment(filePath));
+                foreach (string filepathitem in filePath)
+                {
+                    msg.Attachments.Add(new Attachment(filepathitem));
+                }
             }
 
             StringBuilder sb = new StringBuilder();

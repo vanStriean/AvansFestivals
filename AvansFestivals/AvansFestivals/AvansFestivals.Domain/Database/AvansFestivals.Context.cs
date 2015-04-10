@@ -32,5 +32,7 @@ namespace AvansFestivals.Domain.Database
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<TicketAmount> TicketAmounts { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<UserAndRole> UserAndRoles { get; set; }
     }
 }

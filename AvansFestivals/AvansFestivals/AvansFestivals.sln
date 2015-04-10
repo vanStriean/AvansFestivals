@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansFestivals.WebUI", "AvansFestivals\AvansFestivals.WebUI.csproj", "{D71DA662-E8F4-4726-823D-4B760E3B1C64}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -16,9 +16,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansFestivals.UnitTests.We
 		{7787A5D4-BF06-44C8-B5D7-FE1920223E9A} = {7787A5D4-BF06-44C8-B5D7-FE1920223E9A}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{6B41A4E7-11F3-4501-8D80-E1899D556EF8}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://jorickdejong.visualstudio.com/defaultcollection
 		SccLocalPath0 = .
@@ -31,6 +33,9 @@ Global
 		SccProjectUniqueName3 = AvansFestivals\\AvansFestivals.WebUI.csproj
 		SccProjectName3 = AvansFestivals
 		SccLocalPath3 = AvansFestivals
+		SccProjectUniqueName4 = Resources\\Resources.csproj
+		SccProjectName4 = Resources
+		SccLocalPath4 = Resources
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +54,10 @@ Global
 		{2409D5A6-31BA-4B8B-943D-3AF7168BB5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2409D5A6-31BA-4B8B-943D-3AF7168BB5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2409D5A6-31BA-4B8B-943D-3AF7168BB5CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B41A4E7-11F3-4501-8D80-E1899D556EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B41A4E7-11F3-4501-8D80-E1899D556EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B41A4E7-11F3-4501-8D80-E1899D556EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B41A4E7-11F3-4501-8D80-E1899D556EF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

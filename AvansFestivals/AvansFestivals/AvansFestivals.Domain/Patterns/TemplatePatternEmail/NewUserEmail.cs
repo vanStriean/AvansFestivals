@@ -31,11 +31,9 @@ namespace AvansFestivals.Domain.Patterns.TemplatePatternEmail
             return subject;
         }
 
-        public override string getFilepath() // als de filepath "" bevat wordt er niets meegestuurd.
+        public override List<string> getFilepath() // als de filepath "" bevat wordt er niets meegestuurd.
         {
-            string filePath = "";
-
-            return filePath;
+            return new List<string>();
         }
     }
 }

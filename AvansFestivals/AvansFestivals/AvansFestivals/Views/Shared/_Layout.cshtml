@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+@helper selected(string c, string culture)
+{
+    if (c == culture)
+    {
+        @:checked="checked"
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,9 +17,39 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Content/js/jquery.cookie.js")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/js/bootstrap-datepicker.js")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $('.datepicker').datepicker()
 
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+        var checkin = $('#dpd1').datepicker({
+            onRender: function (date) {
+                return date.valueOf() < now.valueOf() ? 'disabled' : '';
+            }
+        }).on('changeDate', function (ev) {
+            if (ev.date.valueOf() > checkout.date.valueOf()) {
+                var newDate = new Date(ev.date)
+                newDate.setDate(newDate.getDate() + 1);
+                checkout.setValue(newDate);
+            }
+            checkin.hide();
+            $('#dpd2')[0].focus();
+        }).data('datepicker');
+        var checkout = $('#dpd2').datepicker({
+            onRender: function (date) {
+                return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+            }
+        }).on('changeDate', function (ev) {
+            checkout.hide();
+        }).data('datepicker');
+    </script>
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -24,13 +64,33 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Evenementen", "Events", "Home")</li>
-                    <li>@Html.ActionLink("Zakelijk", "Business", "Home")</li>
-                    <li>@Html.ActionLink("Over Ons", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Beheer", "Index", "FestivalBeheer")</li> 
+                    <li>@Html.ActionLink(@Resource.Events, "Events", "Home")</li>
+                    <li>@Html.ActionLink(@Resource.Business, "Business", "Home")</li>
+                    <li>@Html.ActionLink(@Resource.About, "About", "Home")</li>
+                    <li>@Html.ActionLink(@Resource.Contact, "Contact", "Home")</li>
+                    @if (Session["User"] != null)
+                    {
+                        <li>@Html.ActionLink(@Resource.FestivalMangement, "Index", "FestivalBeheer")</li>
+                    }
                 </ul>
-               @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown dropdown-language">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <div class="container">
+                                    <label for="nl">
+                                        <input name="culture" id="nl" value="nl" type="radio" @selected("nl", culture) /> Nederlands
+                                    </label>
+                                    <label for="en">
+                                        <input name="culture" id="en" value="en" type="radio" @selected("en", culture) /> Engels
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    @Html.Partial("_LoginPartial")
+                </ul>
             </div>
         </div>
     </div>
@@ -41,5 +101,15 @@
             <p>&copy; @DateTime.Now.Year - Avans Festivals</p>
         </footer>
     </div>
+    <script type="text/javascript">
+        (
+            function ($) {
+                $("input[type = 'radio']").click(function () {
+                    $.cookie("_culture", $(this).val());
+                    location.reload();
+                });
+            }
+        )(jQuery);
+    </script>
 </body>
 </html>

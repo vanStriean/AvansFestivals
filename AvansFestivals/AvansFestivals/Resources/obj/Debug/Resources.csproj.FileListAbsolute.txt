@@ -1,0 +1,10 @@
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\bin\Debug\Resources.dll
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\bin\Debug\Resources.pdb
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\bin\Debug\en\Resources.resources.dll
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\obj\Debug\Resources.Resource.resources
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\obj\Debug\Resources.Resource.en.resources
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\obj\Debug\en\Resources.resources.dll
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\obj\Debug\Resources.dll
+C:\AvansFestivals\AvansFestivals\AvansFestivals\Resources\obj\Debug\Resources.pdb

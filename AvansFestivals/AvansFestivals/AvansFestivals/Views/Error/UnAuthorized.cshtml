@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "UnAuthorized";
+}
+
+<p>&nbsp;</p>
+<div class="alert alert-danger" role="alert">
+    <strong>@Resource.NotLogged</strong>
+    <a href="@Url.Action("Login", "Account")" class="alert-link"> @Resource.PleaseLogin</a>
+</div>
+

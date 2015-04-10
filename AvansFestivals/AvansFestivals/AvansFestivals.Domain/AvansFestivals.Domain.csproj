@@ -57,10 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICommentRepo.cs" />
     <Compile Include="Abstract\IFestivalRepo.cs" />
     <Compile Include="Abstract\IOrderRepo.cs" />
     <Compile Include="Abstract\ITicketRepo.cs" />
     <Compile Include="Abstract\IUserRepo.cs" />
+    <Compile Include="Concrete\CommentRepo.cs" />
     <Compile Include="Concrete\FestivalRepo.cs" />
     <Compile Include="Concrete\OrderRepo.cs" />
     <Compile Include="Concrete\TicketRepo.cs" />
@@ -95,6 +97,9 @@
     <Compile Include="Database\OrderItem.cs">
       <DependentUpon>AvansFestivals.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\Role.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Ticket.cs">
       <DependentUpon>AvansFestivals.tt</DependentUpon>
     </Compile>
@@ -107,19 +112,25 @@
     <Compile Include="Database\User.cs">
       <DependentUpon>AvansFestivals.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\UserAndRole.cs">
+      <DependentUpon>AvansFestivals.tt</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Md5Hash.cs" />
     <Compile Include="Patterns\FactoryPatternTickets\EarlybirdFactory.cs" />
     <Compile Include="Patterns\FactoryPatternTickets\NormalFactory.cs" />
     <Compile Include="Patterns\FactoryPatternTickets\TicketFactory.cs" />
     <Compile Include="Patterns\FactoryPatternTickets\VipFactory.cs" />
+    <Compile Include="Patterns\IteratorPatternComments\Collection.cs" />
+    <Compile Include="Patterns\IteratorPatternComments\IAbstractCollection.cs" />
+    <Compile Include="Patterns\IteratorPatternComments\IAbstractIterator.cs" />
+    <Compile Include="Patterns\IteratorPatternComments\Item.cs" />
+    <Compile Include="Patterns\IteratorPatternComments\Iterator.cs" />
+    <Compile Include="Patterns\ProxyPatternPDF\IPDF.cs" />
+    <Compile Include="Patterns\ProxyPatternPDF\PDF.cs" />
+    <Compile Include="Patterns\ProxyPatternPDF\ProxyPDF.cs" />
+    <Compile Include="Patterns\TemplatePatternEmail\CommentEmail.cs" />
     <Compile Include="Patterns\TemplatePatternEmail\OrderEmail.cs" />
     <Compile Include="TestData\TestData.cs" />
-    <Compile Include="Patterns\StatePattern\BaseState.cs" />
-    <Compile Include="Patterns\StatePattern\CreatedState.cs" />
-    <Compile Include="Patterns\StatePattern\DoneState.cs" />
-    <Compile Include="Patterns\StatePattern\InProgressState.cs" />
-    <Compile Include="Patterns\StatePattern\SoldOutState.cs" />
-    <Compile Include="Patterns\StatePattern\StartSaleState.cs" />
     <Compile Include="Patterns\StrategyPatternPayment\IdealStrategy.cs" />
     <Compile Include="Patterns\StrategyPatternPayment\PaymentStategy.cs" />
     <Compile Include="Patterns\StrategyPatternPayment\PaypalStrategy.cs" />
@@ -156,9 +167,7 @@
   <ItemGroup>
     <Content Include="Database\AvansFestivals.edmx.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Patterns\CommandPatternSendEmail\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

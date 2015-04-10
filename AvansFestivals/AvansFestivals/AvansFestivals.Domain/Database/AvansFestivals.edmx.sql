@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/26/2015 12:35:06
+-- Date Created: 04/07/2015 13:46:48
 -- Generated from EDMX file: C:\Users\Jorick-pc\Desktop\IVH11\AvansFestivals\AvansFestivals\AvansFestivals.Domain\Database\AvansFestivals.edmx
 -- --------------------------------------------------
 
@@ -17,9 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_CommentComment]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Comments] DROP CONSTRAINT [FK_CommentComment];
-GO
 IF OBJECT_ID(N'[dbo].[FK_FestivalComment]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Comments] DROP CONSTRAINT [FK_FestivalComment];
 GO
@@ -35,11 +32,17 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_OrderOrderItem]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[OrderItems] DROP CONSTRAINT [FK_OrderOrderItem];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UserTicket]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Tickets] DROP CONSTRAINT [FK_UserTicket];
-GO
 IF OBJECT_ID(N'[dbo].[FK_FestivalTicketAmount]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TicketAmounts] DROP CONSTRAINT [FK_FestivalTicketAmount];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserOrder]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_UserOrder];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserAndRoleUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserAndRoles] DROP CONSTRAINT [FK_UserAndRoleUser];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserAndRoleRole]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserAndRoles] DROP CONSTRAINT [FK_UserAndRoleRole];
 GO
 
 -- --------------------------------------------------
@@ -67,6 +70,12 @@ GO
 IF OBJECT_ID(N'[dbo].[TicketAmounts]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TicketAmounts];
 GO
+IF OBJECT_ID(N'[dbo].[Role]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Role];
+GO
+IF OBJECT_ID(N'[dbo].[UserAndRoles]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserAndRoles];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -77,7 +86,6 @@ CREATE TABLE [dbo].[Comments] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Message] nvarchar(max)  NOT NULL,
     [Created] datetime  NOT NULL,
-    [CommentId] int  NOT NULL,
     [FestivalId] int  NOT NULL,
     [UserId] int  NOT NULL
 );
@@ -106,7 +114,8 @@ GO
 -- Creating table 'Orders'
 CREATE TABLE [dbo].[Orders] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Ordered] datetime  NOT NULL
+    [Ordered] datetime  NOT NULL,
+    [UserId] int  NOT NULL
 );
 GO
 
@@ -116,8 +125,7 @@ CREATE TABLE [dbo].[Tickets] (
     [Price] float  NOT NULL,
     [TicketType] int  NOT NULL,
     [FestivalId] int  NOT NULL,
-    [OrderItemId] int  NOT NULL,
-    [UserId] int  NOT NULL
+    [OrderItemId] int  NOT NULL
 );
 GO
 
@@ -129,8 +137,7 @@ CREATE TABLE [dbo].[Users] (
     [Email] nvarchar(max)  NOT NULL,
     [Age] int  NOT NULL,
     [Username] nvarchar(max)  NOT NULL,
-    [Password] nvarchar(max)  NOT NULL,
-    [Role] nvarchar(max)  NOT NULL
+    [Password] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -141,6 +148,21 @@ CREATE TABLE [dbo].[TicketAmounts] (
     [Amount] float  NOT NULL,
     [Price] float  NOT NULL,
     [FestivalId] int  NOT NULL
+);
+GO
+
+-- Creating table 'Role'
+CREATE TABLE [dbo].[Role] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'UserAndRoles'
+CREATE TABLE [dbo].[UserAndRoles] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [UserId] int  NOT NULL,
+    [RoleId] int  NOT NULL
 );
 GO
 
@@ -190,24 +212,21 @@ ADD CONSTRAINT [PK_TicketAmounts]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'Role'
+ALTER TABLE [dbo].[Role]
+ADD CONSTRAINT [PK_Role]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'UserAndRoles'
+ALTER TABLE [dbo].[UserAndRoles]
+ADD CONSTRAINT [PK_UserAndRoles]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [CommentId] in table 'Comments'
-ALTER TABLE [dbo].[Comments]
-ADD CONSTRAINT [FK_CommentComment]
-    FOREIGN KEY ([CommentId])
-    REFERENCES [dbo].[Comments]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_CommentComment'
-CREATE INDEX [IX_FK_CommentComment]
-ON [dbo].[Comments]
-    ([CommentId]);
-GO
 
 -- Creating foreign key on [FestivalId] in table 'Comments'
 ALTER TABLE [dbo].[Comments]
@@ -215,7 +234,7 @@ ADD CONSTRAINT [FK_FestivalComment]
     FOREIGN KEY ([FestivalId])
     REFERENCES [dbo].[Festivals]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_FestivalComment'
@@ -260,7 +279,7 @@ ADD CONSTRAINT [FK_OrderItemTicket]
     FOREIGN KEY ([OrderItemId])
     REFERENCES [dbo].[OrderItems]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_OrderItemTicket'
@@ -275,28 +294,13 @@ ADD CONSTRAINT [FK_OrderOrderItem]
     FOREIGN KEY ([OrderId])
     REFERENCES [dbo].[Orders]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_OrderOrderItem'
 CREATE INDEX [IX_FK_OrderOrderItem]
 ON [dbo].[OrderItems]
     ([OrderId]);
-GO
-
--- Creating foreign key on [UserId] in table 'Tickets'
-ALTER TABLE [dbo].[Tickets]
-ADD CONSTRAINT [FK_UserTicket]
-    FOREIGN KEY ([UserId])
-    REFERENCES [dbo].[Users]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_UserTicket'
-CREATE INDEX [IX_FK_UserTicket]
-ON [dbo].[Tickets]
-    ([UserId]);
 GO
 
 -- Creating foreign key on [FestivalId] in table 'TicketAmounts'
@@ -312,6 +316,51 @@ GO
 CREATE INDEX [IX_FK_FestivalTicketAmount]
 ON [dbo].[TicketAmounts]
     ([FestivalId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'Orders'
+ALTER TABLE [dbo].[Orders]
+ADD CONSTRAINT [FK_UserOrder]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([Id])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserOrder'
+CREATE INDEX [IX_FK_UserOrder]
+ON [dbo].[Orders]
+    ([UserId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'UserAndRoles'
+ALTER TABLE [dbo].[UserAndRoles]
+ADD CONSTRAINT [FK_UserAndRoleUser]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([Id])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserAndRoleUser'
+CREATE INDEX [IX_FK_UserAndRoleUser]
+ON [dbo].[UserAndRoles]
+    ([UserId]);
+GO
+
+-- Creating foreign key on [RoleId] in table 'UserAndRoles'
+ALTER TABLE [dbo].[UserAndRoles]
+ADD CONSTRAINT [FK_UserAndRoleRole]
+    FOREIGN KEY ([RoleId])
+    REFERENCES [dbo].[Role]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserAndRoleRole'
+CREATE INDEX [IX_FK_UserAndRoleRole]
+ON [dbo].[UserAndRoles]
+    ([RoleId]);
 GO
 
 -- --------------------------------------------------

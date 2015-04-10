@@ -8,10 +8,11 @@ using AvansFestivals.Domain.Abstract;
 using AvansFestivals.Domain.TestData;
 using AvansFestivals.Domain.Patterns.TemplatePatternEmail;
 using AvansFestivals.Models;
+using AvansFestivals.HtmlHelpers;
 
 namespace AvansFestivals.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : CultureBaseController
     {
         IFestivalRepo festivalProvider;
 
@@ -24,47 +25,57 @@ namespace AvansFestivals.Controllers
             //If the database is empty, uncommand this line for test data in the database.
             //TestData.Fill(30);
 
-            //Email email = new NewUserEmail();
-            //email.sendEmail();
-
             //LOGGER options:
             //logger.Info("Info");
             //logger.Debug("Debug");
             //logger.Error("Error", ex);
             //Dir: projectfolder\AvansFestivals\logs\log.txt
 
-        }
+        }  
 
         public ViewResult Index()
         {
+            logger.Info("Opkomende festivals ophalen");
+            logger.Info("Random festivals ophalen");
+
             FestivalListModel model = new FestivalListModel
             {
                 Festivals = festivalProvider.getUpcomingFirstTen(),
                 RandomFestivals = festivalProvider.GetRandomFestivals(5)
             };
 
+            logger.Info("FestivalListModel maken en weergeven in view");
+            
             return View(model);
         }
 
         public ActionResult Business()
         {
+            logger.Info("Maak link voor Bussiness aan in de view");
+
             return View();
         }
 
         public ActionResult About()
         {
+            logger.Info("Maak link voor About aan in de view");
+
             return View();
         }
 
         public ActionResult Contact()
         {
+            logger.Info("Maak link voor Contact aan in de view");
+
             return View();
         }
 
         public ViewResult Events(int page = 1)
         {
             int PageSize = 8;
-            FestivalListModel model = new FestivalListModel
+            logger.Info("Aantal events per pagina is 8");
+            
+            FestivalListModel model = new FestivalListModel            
             {
                 Festivals = festivalProvider.getUpcoming()
                 .Skip((page - 1) * PageSize)
@@ -77,6 +88,9 @@ namespace AvansFestivals.Controllers
                     TotalItems = festivalProvider.getUpcoming().Count()
                 }
             };
+
+            logger.Info("FestivalListModel maken en weergeven in view");
+
             return View(model);
         }
 

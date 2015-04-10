@@ -1,7 +1,5 @@
-﻿@model AvansFestivals.Domain.Database.Festival
-@{
-    ViewBag.Title = "Festival Details";
-}
+﻿@model AvansFestivals.Models.FestivalModel
+@using AvansFestivals.Domain.Database
 <div class="row">
     <div class="col-md-12">
         <div class="banner">
@@ -15,13 +13,13 @@
             <div class="panel-body">
                 <img class="img-responsive" src="@Model.Logo" />
                 <dl>
-                    <dt>Naam</dt>
+                    <dt>@Resource.Name</dt>
                     <dd>@Model.Name</dd>
                 </dl>
                 <dl>
-                    <dt>Datum</dt>
+                    <dt>@Resource.Date</dt>
                     <dd>@Model.Start.ToShortDateString()</dd>
-                    <dd>tot</dd>
+                    <dd>@Resource.Until</dd>
                     <dd>@Model.End.ToShortDateString()</dd>
                 </dl>
             </div>
@@ -29,9 +27,36 @@
     </div>
     <div class="col-md-8">
         <dl>
-            <dt>Omschrijving</dt>
+            <dt>@Resource.Description</dt>
             <dd>@Model.Description</dd>
         </dl>
+        <h4>@Resource.Comments</h4>
+        @if (Model.Comments != null)
+        {
+            <button type="button" class="btn btn-xs btn-danger pull-right" data-toggle="collapse" data-target="#comments">@Resource.CollapseInOut</button>
+            <div id="comments" class="collapse in">
+                @foreach (var c in Model.Comments)
+                {
+                    @Html.Partial("_CommentPartail", c)
+                }
+            </div>
+        }
+        else
+        {
+            @Resource.NoCommentsAvailable
+        }
+        
+        @if (Session["User"] != null)
+        {
+            @Html.Partial("_AddCommentPartail", new Comment(){ FestivalId = Model.Id})
+        }
+        else
+        {
+            <dl>
+                <dt>@Resource.WriteComment</dt>
+                <dd><a href="@Url.Action("Login", "Account")">@Resource.PleaseLogin</a></dd>
+            </dl>
+        }
     </div>
     <div class="col-md-2">
         <div class="panel panel-default">
@@ -44,26 +69,26 @@
                         <dt>@e.TicketType.ToString()</dt>
                         @if ((e.Amount - Model.Tickets.Where(w => w.TicketType == e.TicketType).Count()) > 0)
                         {
-                            <dd class="text-success"><span class="glyphicon glyphicon-ok-sign"></span> Beschikbaar</dd>
+                            <dd class="text-success"><span class="glyphicon glyphicon-ok-sign"></span> @Resource.Available</dd>
                         }
                         else
                         {
-                            <dd class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Uitverkocht</dd>
+                            <dd class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> @Resource.SoldOut</dd>
                         }
                     </dl>
                 }
                 @if (Session["User"] != null)
                 {
                     <dl>
-                        <dt>Tickets</dt>
-                        <dd><a href="@Url.Action("Tickets", "Festival", new { id = Model.Id })" class="btn btn-primary">Bestellen<span class="glyphicon glyphicon-tags"></span></a></dd>
+                        <dt>@Resource.Tickets</dt>
+                        <dd><a href="@Url.Action("Tickets", "Festival", new { id = Model.Id })" class="btn btn-primary">@Resource.OrderNow <span class="glyphicon glyphicon-tags"></span></a></dd>
                     </dl>
                 }
                 else
                 {
                     <dl>
-                        <dt>Bestellen</dt>
-                        <dd>Om tickets te kunnen bestellen moet je <a href="@Url.Action("Login", "Account")">ingelogd</a> zijn.</dd>
+                        <dt>@Resource.Order @Resource.Tickets</dt>
+                        <dd><a href="@Url.Action("Login", "Account")">@Resource.PleaseLogin</a></dd>
                     </dl>
                 }
             </div>

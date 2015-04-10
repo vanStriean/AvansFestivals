@@ -9,7 +9,7 @@ namespace AvansFestivals.Domain.Abstract
 {
     public interface ITicketRepo
     {
-        string CreateTicketPdf(Ticket ticket);
+        //string CreateTicketPdf(Ticket ticket);
         TicketAmount GetTicketAmount(int id);
         void RemoveTicketAmount(TicketAmount ticketAmount);
         void EditTicketAmount(TicketAmount ticketAmount);
